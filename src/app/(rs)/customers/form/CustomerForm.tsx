@@ -14,7 +14,6 @@ import { CheckboxWithLabel } from "@/components/inputs/CheckboxWithLabel"
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 
 import { StatesArray } from "@/constants/StateArray"
-import { TextAreaWithLabel } from "@/components/inputs/TextAreaWithLabel"
 import { saveCustomerAction } from "@/app/actions/saveCustomerAction"
 import { useAction } from 'next-safe-action/hooks'
 import { useToast } from "@/hooks/use-toast"
@@ -137,12 +136,6 @@ export default function CustomerForm({ customer }: Props) {
                             fieldTitle="Phone"
                             nameInSchema="phone"
                         />
-                        <TextAreaWithLabel<insertCustomerSchemaType>
-                            fieldTitle="Notes"
-                            nameInSchema="notes"
-                            className="h-40"
-                        />
-
                         {isLoading ? <p>Loading...</p> : isManager ? (
                         <CheckboxWithLabel<insertCustomerSchemaType>
                             fieldTitle="Active"

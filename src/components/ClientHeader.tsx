@@ -5,7 +5,7 @@ import { MailButton } from './MailButton';
 
 export function ClientHeader() {
     return (
-        <header className='animate-slide bg-background h-40 p-6 top-0 z-20 '>
+        <header className='animate-slide h-40 p-6 top-0 z-20  bg-primary'>
             <div className="flex h-8 items-center justify-between w-full">
 
                 <div className='flex items-center gap-2'>

@@ -24,11 +24,14 @@ export default {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#FFFDF6',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+			badge: {
+				DEFAULT: '#F4EDD8'
+			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: '#2F1834',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
