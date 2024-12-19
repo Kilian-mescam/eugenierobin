@@ -1,15 +1,17 @@
-import { Project } from "./Project";
+import { getProjects } from "@/lib/queries/getProjects";
+import Project from "./Project";
 
+export async function ProjectsWrapper() {
 
-export function ProjectsWrapper() {
+    const projectData = await getProjects()
+    
     return (
-        <div>
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-        </div>
+        <div className="projects-list">
+                {projectData.map((project, index) => (
+                    <Project
+                        key={index}
+                        project={project}                    />
+                ))}
+            </div>
     ) 
 }
