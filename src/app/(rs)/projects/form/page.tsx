@@ -1,46 +1,46 @@
 import { BackButton } from "@/components/BackButton";
-import { getCustomer } from "@/lib/queries/getCustomer";
+import { getProject } from "@/lib/queries/getProject";
 import * as Sentry from "@sentry/nextjs"
-import CustomerForm from "@/app/(rs)/customers/form/CustomerForm";
+import ProjectForm from "@/app/(rs)/projects/form/ProjectForm";
 
 export async function generateMetadata({
     searchParams,
 }: {
     searchParams: Promise<{ [key: string]: string | undefined }>
 }) {
-    const { customerId } = await searchParams
+    const { projectId } = await searchParams
 
-    if (!customerId) return { title: "New Customer" }
+    if (!projectId) return { title: "New Project" }
 
-    return { title: `Edit Customer #${customerId}`}
+    return { title: `Edit Project #${projectId}`}
 }
 
-export default async function CustomerFormPage({
+export default async function ProjectFormPage({
     searchParams, 
 }: {
     searchParams: Promise<{ [key: string]: string | undefined }>
 }) {
     try {
-        const { customerId } = await searchParams
+        const { projectId } = await searchParams
 
         // Edit a customer from
-        if (customerId) {
-            const customer = await getCustomer(parseInt(customerId))
+        if (projectId) {
+            const project = await getProject(parseInt(projectId))
 
-            if (!customer) {
+            if (!project) {
                 return (
                     <>
-                        <h2 className="text-2xl mb-2">Customer ID #{customerId} not found</h2>
+                        <h2 className="text-2xl mb-2">Project ID #{projectId} not found</h2>
                         <BackButton title="Go Back" variant="default" />
                     </>
                 )
             }
-            console.log(customer)
+            console.log(project)
             // put customer form component 
-            return <CustomerForm customer={customer} />
+            return <ProjectForm project={project} />
         } else {
             // new customer form component 
-            return <CustomerForm />
+            return <ProjectForm />
         }
     } catch (e) {
         if (e instanceof Error) {
