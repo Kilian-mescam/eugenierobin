@@ -1,4 +1,4 @@
-import { getProjectSearchResults } from "@/lib/queries/getCustomerSearchResults"
+import { getProjectSearchResults } from "@/lib/queries/getProjectSearchResults"
 import ProjectSearch from "./ProjectSearch"
 
 export const metadata = { 

@@ -5,10 +5,12 @@ import { ProjectsWrapper} from "@/components/layout/ProjectsWrapper";
 
 export default function Home() {
   return (
-    <div className="mx-auto width-full p-5">
+    <div className="mx-auto width-full">
       <ClientHeader />
-      <PresentationBlock />
-      <ProjectsWrapper />
+        <div className='p-5'>
+          <PresentationBlock />
+          <ProjectsWrapper />
+        </div>
       <ClientFooter />
   </div>
   );

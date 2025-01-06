@@ -11,7 +11,7 @@ export function ClientHeader() {
                 <div className='flex items-center gap-2'>
                 <Image 
                     className="mt-10 rounded-xl"
-                    src="/images/logo-youjine.png"
+                    src="/images/logo-youjine.svg"
                     width={200}
                     height={200}
                     sizes="200px"
