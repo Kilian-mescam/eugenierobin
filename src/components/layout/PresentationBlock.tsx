@@ -11,11 +11,11 @@ export function PresentationBlock() {
                 <Badge>DESIGNER UX/UI</Badge>
                 <Badge>FREELANCE</Badge>
             </div>
-            <div className="text-center">
-                <h1>
+            <div className="text-center px-96">
+                <h1 className='text-6xl font-black text-secondary '>
                     Je design des interfaces claires et intuitives
                 </h1>
-                <h4>
+                <h4 className='mt-7 text-xl text-seconday fontsemiBold'>
                     L'empathie pour améliorer le quotidien, trouver des solutions, générer des émotions
                 </h4>
                 <div className="p-10">

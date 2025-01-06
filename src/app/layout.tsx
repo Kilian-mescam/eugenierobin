@@ -3,16 +3,30 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const neulisAlt = localFont({
+src: "./fonts/NeulisAlt-Regular.woff",
+  variable: "--font-neulisAlt",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+
+const neulisAltSemiBold = localFont({
+  src: "./fonts/NeulisAlt-SemiBold.woff",
+    variable: "--font-neulisAlt-semiBold",
+    weight: "100 900",
+  });
+
+const archivo = localFont({
+  src: "./fonts/Archivo-Regular.ttf",
+  variable: "--font-archivo",
   weight: "100 900",
 });
+
+const archivoMedium = localFont({
+  src: "./fonts/Archivo-Medium.ttf",
+  variable: "--font-archivo-medium",
+  weight: "100 900",
+});
+
 
 export const metadata: Metadata = {
   title: {
@@ -31,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary`}
+        className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} antialiased bg-primary`}
       >
         {children}
         <Toaster />
