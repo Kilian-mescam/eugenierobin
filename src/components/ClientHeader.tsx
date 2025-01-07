@@ -34,11 +34,8 @@ export function ClientHeader() {
                 </Link>
 
                 <MailButton
-                    href="/customers" 
-                    label="eugenierobin.ui@gmail.com" 
-                    icon={ArrowRight} 
-                    isHovered={isHovered} 
-                    setIsHovered={setIsHovered} 
+                    href="/" 
+                    label="eugenierobin.ui@gmail.com"
                     />
                 </div>
             </div>
