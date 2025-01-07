@@ -8,7 +8,7 @@ import { NavButtonMenu } from './NavButtonMenu';
 
 export function Header() {
     return (
-        <header className='animate-slide bg-background h-12 p-2 border-b top-0 z-20 '>
+        <header className='bg-background h-12 p-2 border-b top-0 z-20 '>
             <div className="flex h-8 items-center justify-between w-full">
 
                 <div className='flex items-center gap-2'>

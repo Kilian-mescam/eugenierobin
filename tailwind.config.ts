@@ -73,9 +73,9 @@ export default {
 					opacity: "1",
 				}
 			},
-			appearLeft: {
-				'0%': { width: '0px', fontSize: '0px', opacity: '0', transform: 'translateX(15px)' },
-				'100%': { width: '20px', fontSize: '16px', opacity: '1', transform: 'translateX(0)' },
+			"appearLeft": {
+				from: { width: '0px', fontSize: '0px', opacity: '0', transform: 'translateX(20px)' },
+				to: { width: '24px', fontSize: '20px', opacity: '1', transform: 'translateX(0)' },
 			  },
 			"slide": {
 					from: {
@@ -88,8 +88,8 @@ export default {
 		},
 		animation: {
 			"appear": "appear 1s ease-in-out",
-			appearLeft: 'appearLeft 0.5s ease-in-out',
-			"slide": "slide 750ms easde-in-out" 
+			"appearLeft": 'appearLeft 0.3s ease-in-out',
+			"slide": "slide 750ms ease-in-out" 
 		},
   	}
   },

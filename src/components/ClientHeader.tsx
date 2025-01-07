@@ -1,15 +1,10 @@
-"use client"
-
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link'
 import Image from 'next/image'
 import { MailButton } from './MailButton';
-import { useState } from 'react';
 
 export function ClientHeader() {
-    const [isHovered, setIsHovered] = useState(false);
     return (
-        <header className='animate-slide h-40 p-6 top-0 z-20  bg-primary'>
+        <header className='h-40 p-6 top-0 z-20  bg-primary'>
             <div className="flex h-8 items-center justify-between w-full">
 
                 <div className='flex items-center gap-2'>
