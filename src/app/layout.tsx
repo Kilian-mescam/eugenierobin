@@ -18,13 +18,13 @@ const neulisAltSemiBold = localFont({
 const archivo = localFont({
   src: "./fonts/Archivo-Regular.ttf",
   variable: "--font-archivo",
-  weight: "100 900",
+  weight: "500 900",
 });
 
 const archivoMedium = localFont({
   src: "./fonts/Archivo-Medium.ttf",
   variable: "--font-archivo-medium",
-  weight: "100 900",
+  weight: "500 900",
 });
 
 

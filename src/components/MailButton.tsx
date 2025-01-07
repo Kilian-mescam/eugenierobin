@@ -7,27 +7,36 @@ type Props = {
     icon: LucideIcon,
     label: string,
     href?: string,
+    isHovered?: boolean;
+    setIsHovered: (hover: boolean) => void;
 }
 
 export function MailButton({
     icon: Icon,
     label,
     href,
+    isHovered,
+    setIsHovered
 }: Props) {
+
     return (
         <Button 
-        variant="outline"
-        size="icon"
+        variant="mail"
+        size="mail"
         aria-label={label}
         title={label}
-        className="w-60 rounded-full text-sm text-black text-center hover:none"
         asChild
+        onMouseEnter={() => setIsHovered(true)} // Use the parent's state setter
+        onMouseLeave={() => setIsHovered(false)} // Use the parent's state setter
         >
             {href ? (  
-            <Link href={href} className="flex justify-center items-center gap-2 ml-0" title="home">
-            <h6 className="hidden sm:block text-md m-0 mt-1">
+            <Link href={href} className="flex justify-center items-center" title="home">
+            <h6 className="hidden text-base sm:block m-0">
                 {label}
             </h6>
+            {isHovered ? <Icon className={`ml-2 transition duration-500 ease-in-out ${
+              isHovered ? 'opacity-100' : 'opacity-0'
+            }`} /> : null}
         </Link>
             ) : (<Icon />)}
         </Button>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-archivo)
+  font-family: var(--font-archivoMedium)
 }
 
 h1 {
