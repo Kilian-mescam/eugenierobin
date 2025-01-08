@@ -1,8 +1,12 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { MailButton } from './MailButton';
+import { useState } from 'react';
 
 export function ClientHeader() {
+    
     return (
         <header className='h-40 p-6 top-0 z-20  bg-primary'>
             <div className="flex h-8 items-center justify-between w-full">
@@ -31,7 +35,7 @@ export function ClientHeader() {
                 <MailButton
                     href="/" 
                     label="eugenierobin.ui@gmail.com"
-                    />
+                />
                 </div>
             </div>
         </header>
