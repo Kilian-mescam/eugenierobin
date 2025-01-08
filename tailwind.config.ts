@@ -64,32 +64,18 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		  transitionProperty: {
+			'width': 'width',
+			'spacing': 'margin, padding',
+		  },
 		keyframes: {
-			"appear": {
-				from : {
-					opacity: "0",
-				},
-				to: {
-					opacity: "1",
-				}
-			},
-			"appearLeft": {
-				from: { width: '0px', fontSize: '0px', opacity: '0', transform: 'translateX(20px)' },
-				to: { width: '24px', fontSize: '20px', opacity: '1', transform: 'translateX(0)' },
+			"expand": {
+				'0%': { width: 'w-72' },
+				'100%': { with: 'w-96' },
 			  },
-			"slide": {
-					from: {
-						"transform": "translateX(100%)",
-					},
-					to: {
-						"transform": "translateX(0%)",
-					}
-				}
 		},
 		animation: {
-			"appear": "appear 1s ease-in-out",
-			"appearLeft": 'appearLeft 0.3s ease-in-out',
-			"slide": "slide 750ms ease-in-out" 
+			"expand": 'expand 1s ease-in-out',
 		},
   	}
   },

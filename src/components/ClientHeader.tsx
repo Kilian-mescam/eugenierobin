@@ -6,6 +6,7 @@ import { MailButton } from './MailButton';
 import { useState } from 'react';
 
 export function ClientHeader() {
+    const [isHovered, setIsHovered] = useState(false);
     
     return (
         <header className='h-40 p-6 top-0 z-20  bg-primary'>
@@ -35,6 +36,8 @@ export function ClientHeader() {
                 <MailButton
                     href="/" 
                     label="eugenierobin.ui@gmail.com"
+                    isHovered={isHovered}
+                    setIsHovered={setIsHovered}
                 />
                 </div>
             </div>
