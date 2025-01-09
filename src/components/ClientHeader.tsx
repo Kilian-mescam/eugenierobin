@@ -28,7 +28,7 @@ export function ClientHeader() {
 
                 <div className='flex items-center gap-10'>
                 <Link href="/home" className="flex justify-center items-center gap-2 ml-0" title="home">
-                    <h6 className="hidden sm:block text-md m-0 mt-1">
+                    <h6 className="hidden sm:block text-base m-0 mt-1">
                         A propos
                     </h6>
                 </Link>

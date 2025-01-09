@@ -2,11 +2,10 @@ import { SkillCard } from "../SkillCard";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 
-
 export function PresentationBlock() {
     return (
         <div className="flex flex-col gap-10 items-center justify-center">
-            <div className="flex gap-10">
+            <div className="flex gap-3">
                 <Badge>GRAPHISTE</Badge>
                 <Badge>DESIGNER UX/UI</Badge>
                 <Badge>FREELANCE</Badge>

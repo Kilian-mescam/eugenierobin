@@ -27,6 +27,12 @@ const archivoMedium = localFont({
   weight: "500 900",
 });
 
+const gotham = localFont({
+  src: "./fonts/Gotham-Rounded-Medium-Italic.otf",
+  variable: "--font-gotham",
+  weight: "500 900",
+});
+
 
 export const metadata: Metadata = {
   title: {
@@ -45,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} antialiased bg-primary`}
+        className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
         {children}
         <Toaster />

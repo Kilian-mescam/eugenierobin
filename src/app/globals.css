@@ -14,8 +14,18 @@ h4 {
   font-family: var(--font-archivoMedium)
 }
 
+/* Add your custom font face here */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../app/fonts/Gotham-Rounded-Medium-Italic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   :root {
+    --font-gotham: 'Gotham', sans-serif; /* Define your font variable */
+    --font-gotham: var(--font-gotham);
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
@@ -76,5 +86,12 @@ h4 {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-gotham {
+    @apply font-sans; /* Fallback to Tailwind's `sans` */
+    font-family: var(--font-gotham); /* Use your custom variable */
   }
 }
