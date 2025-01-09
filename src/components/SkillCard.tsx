@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import Image from 'next/image'
 
@@ -6,6 +7,7 @@ type Props = {
     imageModified?: string
     label: string,
     content: string,
+    className?: string
 }
 
 export function SkillCard({
@@ -13,16 +15,17 @@ export function SkillCard({
     imageModified,
     label,
     content,
+    className
 }: Props) {
     return (
         <Card className="max-w-72">
             <div className="flex flex-col items-center">
                 <Image 
-                    className="mt-10 rounded-xl"
+                    className={className}
                     src={image}
-                    width={200}
-                    height={200}
-                    sizes="200px"
+                    width={250}
+                    height={250}
+                    sizes="300px"
                     alt={label}
                     priority={true}
                     title={label}

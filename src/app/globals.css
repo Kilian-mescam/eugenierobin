@@ -17,7 +17,7 @@ h4 {
 /* Add your custom font face here */
 @font-face {
   font-family: 'Gotham';
-  src: url('../app/fonts/Gotham-Rounded-Medium-Italic.otf') format('otf');
+  src: url('../app/fonts/Gotham-Rounded-Bold-Italic.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }

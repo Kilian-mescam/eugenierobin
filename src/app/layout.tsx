@@ -28,7 +28,7 @@ const archivoMedium = localFont({
 });
 
 const gotham = localFont({
-  src: "./fonts/Gotham-Rounded-Medium-Italic.otf",
+  src: "./fonts/Gotham-Rounded-Bold-Italic.otf",
   variable: "--font-gotham",
   weight: "500 900",
 });
