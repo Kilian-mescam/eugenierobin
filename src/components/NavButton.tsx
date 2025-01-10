@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button";
 
 type Props = {
-    icon: LucideIcon,
+    icon?: LucideIcon,
     label: string,
     href?: string,
 }
@@ -17,18 +17,18 @@ export function NavButton({
 }: Props) {
     return (
         <Button 
-        variant="ghost"
+        variant="secondary"
         size="icon"
         aria-label={label}
         title={label}
-        className="rounded-full"
+        className="text-white bg-secondary rounded-full"
         asChild
         >
-            {href ? (  
+            {href && Icon && (  
             <Link href={href}>
                 <Icon />
             </Link>
-            ) : (<Icon />)}
+            )}
         </Button>
     )
 }
