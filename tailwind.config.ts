@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
 		backgroundImage: {
-			'home-img': "url('/images/bg-mezcal.jpg')",
+			'cover-aida': "url('/images/coverAida.png')",
 		},
   		colors: {
   			background: 'hsl(var(--background))',

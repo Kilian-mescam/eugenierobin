@@ -41,8 +41,8 @@ export function PresentationBlock() {
                 </div>
                 <div className="flex justify-center gap-10 ">
                     <SkillCard label="IMAGE DE MARQUE" image="/images/blob.svg" content="Je crée des logos et des identités visuelles qui reflètent votre univers et plaisent à votre audience"></SkillCard>
-                    <SkillCard className="pt-20" label="EXPERIENCE UTILISATEUR" image="/images/sun.svg" content="Je conçois des interfaces pour simplifier la vie des utilisateurs et répondre efficacement à leurs besoins"></SkillCard>
-                    <SkillCard className="pt-10" label="DESIGN D'INTERFACE" image="/images/trefle.svg" content="J'harmonise les designes en respectant votre charte graphique, les spécialisatés de votre plateforme"></SkillCard>
+                    <SkillCard className="pt-10" label="EXPERIENCE UTILISATEUR" image="/images/sun.svg" content="Je conçois des interfaces pour simplifier la vie des utilisateurs et répondre efficacement à leurs besoins"></SkillCard>
+                    <SkillCard className="pt-5" label="DESIGN D'INTERFACE" image="/images/trefle.svg" content="J'harmonise les designes en respectant votre charte graphique, les spécialisatés de votre plateforme"></SkillCard>
                 </div>
             </div>
             <div id="projects"></div>

@@ -4,9 +4,9 @@ export function ClientFooter() {
     return (
         <footer className='bg-secondary bottom-0'>
            <div className='text-white flex justify-between p-32'>
-                <div className='w-1/3'>
+                <div className='w-1/4 flex flex-col gap-4'>
                     <Image 
-                        className="rounded-xl mb-10"
+                        className="rounded-xl"
                         src="/images/flower.svg"
                         width={150}
                         height={150}
@@ -21,7 +21,7 @@ export function ClientFooter() {
 
                     <div className='flex flex-row'>
                         <Image 
-                            className="mt-10 rounded-xl"
+                            className="rounded-xl"
                             src="/images/dribbble.png"
                             width={75}
                             height={75}
@@ -31,7 +31,7 @@ export function ClientFooter() {
                             title="Page Not Found"
                         />
                         <Image 
-                            className="mt-10 rounded-xl"
+                            className="rounded-xl"
                             src="/images/In.png"
                             width={75}
                             height={75}
@@ -42,7 +42,7 @@ export function ClientFooter() {
                         />
                     </div>
                 </div>
-                <div className='bg-yellow-200 w-2/3 p-10'>votre projet concerne</div>
+                <div className='w-3/4 p-10'>votre projet concerne</div>
            </div>
            <div className='border-t botder-b border py-7 flex flex-row items-center justify-around text-white'>
                 <Image 
