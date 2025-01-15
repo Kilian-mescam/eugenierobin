@@ -13,14 +13,14 @@ import { LoaderCircle } from 'lucide-react'
 import { DisplayServerActionResponse } from "@/components/DisplayServerActionResponse"
 import { EmailRequestSchemaType, emailRequestSchema, serviceOptions } from "@/zod-schemas/request"
 import { MultipleCheckboxWithLabel } from "@/components/inputs/MultipleCheckboxWithLabel"
-import { CustomTextAreaWithLabel } from "@/components/inputs/CustomTextAreaWithLabel"
+import { sendEmailAction } from "./actions/sendEmailAction"
 
 export default function RequestForm() {
     const { isLoading } = useKindeBrowserClient()
     const  { toast } = useToast();
 
     const defaultValues: EmailRequestSchemaType = {
-        selectedServices: [],
+        selectedServices: [serviceOptions[0]],
         name: '',
         companyName: '',
         email: '',
@@ -37,22 +37,8 @@ export default function RequestForm() {
         execute: executeSave,
         result: saveResult,
         isPending: isSaving,
-    } = useAction(async (data: EmailRequestSchemaType) => {
-        const response = await fetch('/api/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-    
-        if (!response.ok) {
-            throw new Error('Failed to send email');
-        }
-    
-        return await response.json();
-    }, {
-        onSuccess({ data }) {
+    } = useAction(sendEmailAction, {
+        onSuccess({ data } ) {
             if (data?.message) {
                 toast({
                     variant: "default",

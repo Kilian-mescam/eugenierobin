@@ -1,46 +1,52 @@
-// /pages/api/send-email.ts
-import type { NextApiRequest, NextApiResponse } from 'next';
+"use server"
+
+import { eq } from "drizzle-orm"
+import { flattenValidationErrors } from 'next-safe-action'
+import { redirect } from 'next/navigation'
+
+import { db } from '@/db'
+import { projects } from "@/db/schema"
+import { actionClient } from '@/lib/safe-action'
+import { insertProjectSchema, type insertProjectSchemaType } from "@/zod-schemas/project"
+
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 import nodemailer from 'nodemailer';
+import { z } from 'zod';
+import { emailRequestSchema, type EmailRequestSchemaType } from "@/zod-schemas/request"
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === 'POST') {
-        const { firstName, lastName, email, phone, notes, address1, address2, city, state, zip } = req.body;
+// Define the sendEmailAction using next-safe-action
+export const sendEmailAction = actionClient
+  .metadata({ actionName: 'sendEmailAction' }) // Add metadata for error tracking (like Sentry)
+  .schema(emailRequestSchema, {
+    handleValidationErrorsShape: async (validationErrors) =>
+      flattenValidationErrors(validationErrors).fieldErrors, // Handle validation errors gracefully
+  })
+  .action(async ({ parsedInput }: { parsedInput: EmailRequestSchemaType }) => {
+    const { selectedServices, name, companyName, email, description,  } = parsedInput;
 
-        // Create a transporter object using your email service
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail', // or use SMTP settings for other email services
-            auth: {
-                user: process.env.EMAIL_USER, // Your email address
-                pass: process.env.EMAIL_PASS, // Your email password or app-specific password
-            },
-        });
+    // Nodemailer configuration
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail', // Or any other email service you use (e.g., SMTP)
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-        try {
-            // Send the email
-            await transporter.sendMail({
-                from: process.env.EMAIL_USER, // Your email address
-                to: process.env.EMAIL_TO || process.env.EMAIL_USER, // Send the email to yourself (website owner)
-                subject: 'New Form Submission',
-                html: `
-                    <p><strong>First Name:</strong> ${firstName}</p>
-                    <p><strong>Last Name:</strong> ${lastName}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Phone:</strong> ${phone}</p>
-                    <p><strong>Address:</strong> ${address1} ${address2 ? ", " + address2 : ""}, ${city}, ${state}, ${zip}</p>
-                    <p><strong>Notes:</strong> ${notes}</p>
-                `,
-            });
+    // Define the email options
+    const mailOptions = {
+      from: email, // The sender's email address (from the form)
+      to: process.env.RECIPIENT_EMAIL, // Your recipient email address
+      subject: `New message from ${name}`,
+      text: `<div>selectedServices: ${selectedServices}</div>
+            <div>Name: ${name}</div>
+            <div>companyName: ${companyName}</div>
+            <div>email: ${email}</div>
+            <div>description: ${description}</div>
+            `,
+    };
 
-            res.status(200).json({ message: 'Email sent successfully!' });
-        } catch (error) {
-            // Type guard to ensure error is an instance of Error
-            if (error instanceof Error) {
-                res.status(500).json({ message: 'Failed to send email', error: error.message });
-            } else {
-                res.status(500).json({ message: 'Failed to send email due to unknown error' });
-            }
-        }
-    } else {
-        res.status(405).json({ message: 'Method not allowed' });
-    }
-}
+    // Send the email
+    await transporter.sendMail(mailOptions);
+    return { message: `Mail have been sent successfully`}
+  });

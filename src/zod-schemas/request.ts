@@ -34,11 +34,17 @@ export const serviceOptions: ItemType[] = [
   },
 ] as const
 
+// Define the Zod schema for ItemType
+const itemTypeSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+});
+
 // Zod schema for the email request
 export const emailRequestSchema = z.object({
-  selectedServices:  z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "Choisissez au moins un item",
-  }),
+  selectedServices: z
+    .array(itemTypeSchema)
+    .nonempty({ message: "Choisissez au moins un service" }), // Ensure at least one service is selected
 
   name: z.string().optional(),
 
@@ -49,10 +55,5 @@ export const emailRequestSchema = z.object({
   description: z.string().optional() // Ensure a description is provided
 });
 
-export type EmailRequestSchemaType = {
-  selectedServices: ItemType[];
-  name: string;
-  email: string;
-  description: string;
-  companyName?: string | undefined;
-}
+// Type inferred from the schema
+export type EmailRequestSchemaType = z.infer<typeof emailRequestSchema>;

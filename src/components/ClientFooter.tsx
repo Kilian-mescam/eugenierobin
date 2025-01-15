@@ -5,7 +5,7 @@ export function ClientFooter() {
     return (
         <footer className='bg-secondary bottom-0'>
            <div className='text-white flex justify-between p-32'>
-                <div className='w-1/4 flex flex-col gap-4'>
+                <div className='w-1/2 flex flex-col gap-4 pr-48'>
                     <Image 
                         className="rounded-xl"
                         src="/images/flower.svg"
@@ -43,7 +43,7 @@ export function ClientFooter() {
                         />
                     </div>
                 </div>
-                <div className='w-3/4 p-10'>
+                <div className='w-1/2'>
                     <RequestForm />
                 </div>
            </div>
