@@ -14,6 +14,7 @@ export default function Project({ project }: Props) {
         <div className="relative py-3 text-white">
             <img src={project.imageUrl} alt={project.title} className="object-cover h-screen w-full rounded-2xl relative" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent rounded-2xl top-3 bottom-3"></div>
+            
             <div className="absolute top-1/4 ml-40 flex flex-col gap-10 w-1/3 ">
 
                 <div className="flex gap-3">
@@ -24,7 +25,7 @@ export default function Project({ project }: Props) {
                     <Badge variant="transparent">FREELANCE</Badge>
                 </div>
 
-                <div>
+                <div className="pr-10 flex flex-col gap-5">
                     <h1 className='text-5xl font-white'>{project.title}</h1>
                     <p className="text-base">{project.description}</p>
                 </div>

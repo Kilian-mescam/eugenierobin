@@ -1,3 +1,4 @@
+import RequestForm from '@/app/RequestForm'
 import Image from 'next/image'
 
 export function ClientFooter() {
@@ -42,7 +43,9 @@ export function ClientFooter() {
                         />
                     </div>
                 </div>
-                <div className='w-3/4 p-10'>votre projet concerne</div>
+                <div className='w-3/4 p-10'>
+                    <RequestForm />
+                </div>
            </div>
            <div className='border-t botder-b border py-7 flex flex-row items-center justify-around text-white'>
                 <Image 
