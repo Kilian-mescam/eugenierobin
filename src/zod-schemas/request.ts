@@ -37,16 +37,16 @@ export const serviceOptions: ItemType[] = [
 // Zod schema for the email request
 export const emailRequestSchema = z.object({
   selectedServices:  z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one item.",
+    message: "Choisissez au moins un item",
   }),
 
-  name: z.string().min(1, { message: "Name is required" }),
+  name: z.string().optional(),
 
   companyName: z.string().optional(), // Company name can be optional
 
-  email: z.string().email({ message: "Invalid email format" }), // Validate email format
+  email: z.string().email({ message: "Format d'adresse mail invalide" }), // Validate email format
 
-  description: z.string().min(1, { message: "Description is required" }) // Ensure a description is provided
+  description: z.string().optional() // Ensure a description is provided
 });
 
 export type EmailRequestSchemaType = {

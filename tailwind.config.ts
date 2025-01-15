@@ -34,6 +34,9 @@ export default {
   				DEFAULT: '#2F1834',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
+			violet: {
+				DEFAULT: '#B36CF2'
+			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'

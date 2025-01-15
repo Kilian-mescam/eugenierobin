@@ -17,7 +17,7 @@ type Props<S> = {
     className?: string,
 } & InputHTMLAttributes<HTMLInputElement>
 
-export function InputWithLabel<S>({
+export function CustomInputWithLabel<S>({
     fieldTitle, nameInSchema, className, ...props
 } : Props<S>) {
     const form = useFormContext()
@@ -28,17 +28,11 @@ export function InputWithLabel<S>({
             name={nameInSchema}
             render={({ field }) => (
                 <FormItem>
-                    <FormLabel
-                        className="text-base"
-                        htmlFor={nameInSchema}
-                    >
-                        {fieldTitle}
-                    </FormLabel>
-
                     <FormControl>
                         <Input
                             id={nameInSchema}
-                            className={`w-full max-w-xs border border-input disabled:text-blue-500 dark:disabled:text-green-500 disabled:opacity-75 ${className}`}
+                            className={`w-full disabled:text-blue-500 dark:disabled:text-green-500 focus-visible:outline-none placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring disabled:cursor-not-allowed text-primary disabled:opacity-75 rounded-none border-b border-primary ${className}`}
+                            placeholder={fieldTitle}
                             {...props}
                             {...field}
                         />

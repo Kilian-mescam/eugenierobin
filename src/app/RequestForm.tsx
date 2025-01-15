@@ -2,18 +2,18 @@
 
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 
-import { InputWithLabel } from "@/components/inputs/InputWithLabel"
+import { CustomInputWithLabel } from "@/components/inputs/CustomInputWithLabel"
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 import { useAction } from 'next-safe-action/hooks'
 import { useToast } from "@/hooks/use-toast"
 import { LoaderCircle } from 'lucide-react'
 import { DisplayServerActionResponse } from "@/components/DisplayServerActionResponse"
 import { EmailRequestSchemaType, emailRequestSchema, serviceOptions } from "@/zod-schemas/request"
-import { Checkbox } from "@radix-ui/react-checkbox"  
 import { MultipleCheckboxWithLabel } from "@/components/inputs/MultipleCheckboxWithLabel"
+import { CustomTextAreaWithLabel } from "@/components/inputs/CustomTextAreaWithLabel"
 
 export default function RequestForm() {
     const { isLoading } = useKindeBrowserClient()
@@ -52,22 +52,22 @@ export default function RequestForm() {
     
         return await response.json();
     }, {
-        // onSuccess({ data }) {
-        //     if (data?.message) {
-        //         toast({
-        //             variant: "default",
-        //             title: "Success!",
-        //             description: data?.message,
-        //         })
-        //     }
-        // },
-        // onError({ error }) {
-        //     toast({
-        //         variant: "destructive",
-        //         title: "Error!",
-        //         description: "Save Failled",
-        //     })
-        // }
+        onSuccess({ data }) {
+            if (data?.message) {
+                toast({
+                    variant: "default",
+                    title: "Success!",
+                    description: data?.message,
+                })
+            }
+        },
+        onError({ error }) {
+            toast({
+                variant: "destructive",
+                title: "Error!",
+                description: "Save Failled",
+            })
+        }
     })
 
     async function submitForm(data: EmailRequestSchemaType) {
@@ -75,51 +75,56 @@ export default function RequestForm() {
     }
 
     return (
-        <div className="flex flex-col gap-1 sm:px-8">
-            {/* <DisplayServerActionResponse result={saveResult} /> */}
+        <div className="flex flex-col sm:px-8">
+            <DisplayServerActionResponse result={saveResult} />
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(submitForm)}
-                    className="flex flex-col md:flex-row gap-4 md:gap-8"
+                    className="flex flex-col md:flex-row gap-4 md:gap-8 px-10"
                 >
-                    <div className="flex flex-col gap-4 w-full">
+                    <div className="flex flex-col gap-10 w-full">
                     
+
                         <MultipleCheckboxWithLabel<EmailRequestSchemaType>
                             fieldTitle="Votre demande concerne"
                             nameInSchema="selectedServices"
                             items={serviceOptions}                           
                         />
 
-                        <InputWithLabel<EmailRequestSchemaType>
-                            fieldTitle="Name"
-                            nameInSchema="name"
-                        />
-                        <InputWithLabel<EmailRequestSchemaType>
-                            fieldTitle="companyName"
-                            nameInSchema="companyName"
-                        />
-                        <InputWithLabel<EmailRequestSchemaType>
-                            fieldTitle="email"
-                            nameInSchema="email"
-                        />
-                        <InputWithLabel<EmailRequestSchemaType>
-                            fieldTitle="description"
-                            nameInSchema="description"
-                        />
+
+                        <div className="flex flex-col gap-4 w-full">
+                            <CustomInputWithLabel<EmailRequestSchemaType>
+                                fieldTitle="Nom, prénom"
+                                nameInSchema="name"
+                            />
+                            <CustomInputWithLabel<EmailRequestSchemaType>
+                                fieldTitle="Entreprise"
+                                nameInSchema="companyName"
+                            />
+                            <CustomInputWithLabel<EmailRequestSchemaType>
+                                fieldTitle="Email*"
+                                nameInSchema="email"
+                            />
+                            <CustomInputWithLabel<EmailRequestSchemaType>
+                                fieldTitle="Décrivez-moi votre projet"
+                                nameInSchema="description"
+                            />
+                        </div>
+                        
                        
                         <div className="flex gap-2">
                             <Button
                                 type="submit"
-                                className="text-black w-3/4"
-                                variant="default"
-                                title="Save"
+                                className="text-black w-1/2 text-white"
+                                variant="violet"
+                                title="Envoyer ma demande"
                                 disabled={isSaving}
                             >
                                 {isSaving ? (
                                     <>
                                         <LoaderCircle className="animate-spin" /> Saving
                                     </>
-                                ) : "Save" }
+                                ) : "Envoyer ma demande" }
                             </Button>
                         </div>
                     </div>
