@@ -25,6 +25,9 @@ export const sendEmailAction = actionClient
   .action(async ({ parsedInput: request }: { parsedInput: EmailRequestSchemaType }) => {
     const { selectedServices, name, companyName, email, description,  } = request;
 
+
+    console.log('sendEmailAction')
+    
     const msg = {
       to: process.env.RECIPIENT_EMAIL, // Change to your recipient
       from: 'your-email@example.com', // Use the email address verified in SendGrid
@@ -37,6 +40,7 @@ export const sendEmailAction = actionClient
         <div>Description: ${description}</div>
       `,
     };
+
 
     try {
       await sgMail.send(msg);

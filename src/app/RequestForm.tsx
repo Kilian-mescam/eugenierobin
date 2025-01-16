@@ -57,8 +57,8 @@ export default function RequestForm() {
     })
 
     function submitForm(data: EmailRequestSchemaType) {
-        console.log('data', data)
-        // executeSave(data)
+        console.log("executeSave", executeSave);
+        executeSave(data)
     }
 
     return (
