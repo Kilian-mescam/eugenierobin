@@ -39,39 +39,31 @@ export function MultipleCheckboxWithLabel<S>({
                         {fieldTitle}
                     </FormLabel>
 
-                    <div className='grid grid-cols-2 gap-2 w-full'>
+                    <div className="grid grid-cols-2 gap-2 w-full">
                         {items.map((item) => (
-                            <FormField
-                            key={item.id}
-                            control={form.control}
-                            name={nameInSchema}
-                            render={({ field }) => {
-                                return (
-                                <FormItem
-                                    key={item.id}
-                                    className="flex flex-row items-center space-x-3 space-y-0"
-                                >
-                                    <FormControl>
+                            <FormItem
+                                key={item.id || item.label} // Ensure a unique key for each checkbox
+                                className="flex flex-row items-center space-x-3 space-y-0"
+                            >
+                                <FormControl>
                                     <Checkbox
-                                        checked={field.value?.includes(item.id)}
+                                        checked={field.value?.includes(item.id)} // Ensure the checkbox reflects the current state
                                         onCheckedChange={(checked) => {
-                                        return checked
-                                            ? field.onChange([...field.value, item.id])
-                                            : field.onChange(
-                                                field.value?.filter(
-                                                (value: string) => value !== item.id
-                                                )
-                                            )
+                                            // Update the form value when the checkbox is toggled
+                                            const updatedValue = checked
+                                                ? [...field.value, item.id] // Add the item to the selected array
+                                                : field.value?.filter(
+                                                      (value: string) => value !== item.id
+                                                  ); // Remove the item from the selected array
+                                            field.onChange(updatedValue); // Update form state
                                         }}
+                                        disabled={disabled} // Optionally disable checkbox
                                     />
-                                    </FormControl>
-                                    <FormLabel className="text-lg font-normal">
+                                </FormControl>
+                                <FormLabel className="text-lg font-normal">
                                     {item.label}
-                                    </FormLabel>
-                                </FormItem>
-                                )
-                            }}
-                            />
+                                </FormLabel>
+                            </FormItem>
                         ))}
                     </div>
 

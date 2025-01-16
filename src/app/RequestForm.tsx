@@ -20,7 +20,7 @@ export default function RequestForm() {
     const  { toast } = useToast();
 
     const defaultValues: EmailRequestSchemaType = {
-        selectedServices: [serviceOptions[0]],
+        selectedServices: [],
         name: '',
         companyName: '',
         email: '',
@@ -56,8 +56,9 @@ export default function RequestForm() {
         }
     })
 
-    async function submitForm(data: EmailRequestSchemaType) {
-        executeSave(data)
+    function submitForm(data: EmailRequestSchemaType) {
+        console.log('data', data)
+        // executeSave(data)
     }
 
     return (
@@ -96,12 +97,11 @@ export default function RequestForm() {
                                 nameInSchema="description"
                             />
                         </div>
-                        
                        
                         <div className="flex gap-2">
                             <Button
                                 type="submit"
-                                className="text-black w-1/2 text-white"
+                                className="text-black text-white"
                                 variant="violet"
                                 title="Envoyer ma demande"
                                 disabled={isSaving}
