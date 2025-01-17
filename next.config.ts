@@ -2,7 +2,8 @@ import {withSentryConfig} from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    transpilePackages: ['lucide-react'] // add this
+    transpilePackages: ['lucide-react'], // add this
+    reactStrictMode: false,  // Add reactStrictMode here
 };
 
 export default withSentryConfig(nextConfig, {

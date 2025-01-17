@@ -6,7 +6,6 @@ import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 
 import { CustomInputWithLabel } from "@/components/inputs/CustomInputWithLabel"
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 import { useAction } from 'next-safe-action/hooks'
 import { useToast } from "@/hooks/use-toast"
 import { LoaderCircle } from 'lucide-react'
@@ -16,7 +15,6 @@ import { MultipleCheckboxWithLabel } from "@/components/inputs/MultipleCheckboxW
 import { sendEmailAction } from "./actions/sendEmailAction"
 
 export default function RequestForm() {
-    const { isLoading } = useKindeBrowserClient()
     const  { toast } = useToast();
 
     const defaultValues: EmailRequestSchemaType = {
@@ -46,6 +44,7 @@ export default function RequestForm() {
                     description: data?.message,
                 })
             }
+            console.log('Success:', data);
         },
         onError({ error }) {
             toast({
@@ -53,11 +52,11 @@ export default function RequestForm() {
                 title: "Error!",
                 description: "Save Failled",
             })
+            console.log('error:', error);
         }
     })
 
     function submitForm(data: EmailRequestSchemaType) {
-        console.log("executeSave", executeSave);
         executeSave(data)
     }
 
@@ -108,7 +107,7 @@ export default function RequestForm() {
                             >
                                 {isSaving ? (
                                     <>
-                                        <LoaderCircle className="animate-spin" /> Saving
+                                        <LoaderCircle className="animate-spin" /> Envoyer ma demande
                                     </>
                                 ) : "Envoyer ma demande" }
                             </Button>
