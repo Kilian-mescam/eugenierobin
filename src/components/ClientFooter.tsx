@@ -23,7 +23,7 @@ export function ClientFooter() {
                     <div className='flex flex-row'>
                         <Image 
                             className="rounded-xl"
-                            src="/images/dribbble.png"
+                            src="/images/dribbble.svg"
                             width={75}
                             height={75}
                             sizes="75px"
@@ -33,7 +33,7 @@ export function ClientFooter() {
                         />
                         <Image 
                             className="rounded-xl"
-                            src="/images/In.png"
+                            src="/images/In.svg"
                             width={75}
                             height={75}
                             sizes="75px"
@@ -49,7 +49,7 @@ export function ClientFooter() {
            </div>
            <div className='border-t botder-b border py-7 flex flex-row items-center justify-around text-white'>
                 <Image 
-                    src='/images/Prairy.png'
+                    src='/images/Prairy.svg'
                     width={100}
                     height={70}
                     alt="Page not found"
@@ -57,7 +57,7 @@ export function ClientFooter() {
                     title="Page Not Found"
                 />
                 <Image 
-                    src='/images/Beaba.png'
+                    src='/images/Beaba.svg'
                     width={80}
                     height={70}
                     alt="Page not found"
@@ -65,7 +65,7 @@ export function ClientFooter() {
                     title="Page Not Found"
                 />
                 <Image 
-                    src='/images/APRR.png'
+                    src='/images/APRR.svg'
                     width={80}
                     height={70}
                     alt="Page not found"
@@ -73,7 +73,7 @@ export function ClientFooter() {
                     title="Page Not Found"
                 />
                 <Image 
-                    src='/images/Aida.png'
+                    src='/images/Aida.svg'
                     width={60}
                     height={50}
                     alt="Page not found"
@@ -81,7 +81,7 @@ export function ClientFooter() {
                     title="Page Not Found"
                 />
                 <Image 
-                    src='/images/ecole-des-loisirs.png'
+                    src='/images/ecole-des-loisirs.svg'
                     width={150}
                     height={70}
                     alt="Page not found"
@@ -89,7 +89,7 @@ export function ClientFooter() {
                     title="Page Not Found"
                 />
                 <Image 
-                    src='/images/Cyril.png'
+                    src='/images/Cyril.svg'
                     width={170}
                     height={70}
                     alt="Page not found"
@@ -100,7 +100,7 @@ export function ClientFooter() {
            <div className='flex justify-between text-white px-32 py-20'>
                 <div>
                     <Image 
-                    src='/images/Logo-small.png'
+                    src='/images/Logo-small.svg'
                     width={110}
                     height={70}
                     alt="Page not found"
@@ -111,7 +111,7 @@ export function ClientFooter() {
                 <div className='flex flex-row'>
                         <Image 
                             className="rounded-xl"
-                            src="/images/dribbble.png"
+                            src="/images/dribbble.svg"
                             width={75}
                             height={75}
                             sizes="75px"
@@ -121,7 +121,7 @@ export function ClientFooter() {
                         />
                         <Image 
                             className="rounded-xl"
-                            src="/images/In.png"
+                            src="/images/In.svg"
                             width={75}
                             height={75}
                             sizes="75px"
