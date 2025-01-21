@@ -13,10 +13,9 @@ export default async function Page({
   const project = await getProject(parseInt(projectId))
 
   return (
-    <div className="h-screen p-20">
-        <div className="relative py-3 text-white ">
-            <img src={project?.imageUrl} alt={project.title} className="object-cover h-screen w-full rounded-2xl relative" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent rounded-2xl top-3 bottom-3"></div>
+        <div className="relative mt-3 text-white ">
+            <img src={project?.imageUrl} alt={project.title} className="object-cover h-screen w-full relative" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent "></div>
             
             <div className="absolute top-1/4 ml-40 flex flex-col gap-10 w-1/3 ">
 
@@ -35,7 +34,5 @@ export default async function Page({
 
             </div>
         </div>
-      </div>
-
   );
 }
