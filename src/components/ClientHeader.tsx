@@ -13,21 +13,23 @@ export function ClientHeader() {
             <div className="flex h-8 items-center justify-between w-full">
 
                 <div className='flex items-center gap-2'>
-                <Image 
-                    className="mt-10 rounded-xl"
-                    src="/images/logo-youjine.svg"
-                    width={200}
-                    height={200}
-                    sizes="200px"
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-
+                <Link href="/"title="home">
+                    <Image 
+                        className="mt-10 rounded-xl"
+                        src="/images/logo-youjine.svg"
+                        width={200}
+                        height={200}
+                        sizes="200px"
+                        alt="Page not found"
+                        priority={true}
+                        title="Page Not Found"
+                    />
+                </Link>
+                
                 </div>
 
                 <div className='flex items-center gap-10'>
-                <Link href="/home" className="flex justify-center items-center gap-2 ml-0" title="home">
+                <Link href="/about" className="flex justify-center items-center gap-2 ml-0" title="home">
                     <h6 className="hidden sm:block text-base m-0 mt-1">
                         A propos
                     </h6>

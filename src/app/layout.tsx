@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
+import { ClientFooter } from "@/components/ClientFooter";
+import { ClientHeader } from "@/components/ClientHeader";
 
 const neulisAlt = localFont({
 src: "./fonts/NeulisAlt-Regular.woff",
@@ -53,8 +55,12 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}
         className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
-        {children}
-        <Toaster />
+        <div className="mx-auto width-full">
+          <ClientHeader />
+            {children}
+          <ClientFooter />
+          <Toaster />
+        </div>
       </body>
     </html>
   );

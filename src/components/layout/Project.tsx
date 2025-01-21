@@ -32,7 +32,7 @@ export default function Project({ project }: Props) {
                 
                 <div>
                     <Button variant="secondary" className="text-white rounded-full">
-                        <Link href="/login">Découvrir le projet</Link>
+                        <Link href={`/project/${project.id}`}>Découvrir le projet</Link>
                     </Button>
                 </div>
             </div>
