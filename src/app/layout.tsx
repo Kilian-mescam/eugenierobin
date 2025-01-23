@@ -56,9 +56,7 @@ export default function RootLayout({
         className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
         <div className="mx-auto width-full">
-          <ClientHeader />
             {children}
-          <ClientFooter />
           <Toaster />
         </div>
       </body>

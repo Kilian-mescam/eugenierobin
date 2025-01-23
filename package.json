@@ -22,6 +22,7 @@
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.2",
+    "@react-email/button": "0.0.19",
     "@sendgrid/mail": "^8.1.4",
     "@sentry/nextjs": "^8",
     "add": "^2.0.6",

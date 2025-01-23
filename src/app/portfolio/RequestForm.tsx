@@ -12,7 +12,7 @@ import { LoaderCircle } from 'lucide-react'
 import { DisplayServerActionResponse } from "@/components/DisplayServerActionResponse"
 import { EmailRequestSchemaType, emailRequestSchema, serviceOptions } from "@/zod-schemas/request"
 import { MultipleCheckboxWithLabel } from "@/components/inputs/MultipleCheckboxWithLabel"
-import { sendEmailAction } from "./actions/sendEmailAction"
+import { sendEmailAction } from "../actions/sendEmailAction"
 
 export default function RequestForm() {
     const  { toast } = useToast();

@@ -1,7 +1,7 @@
 import { BackButton } from "@/components/BackButton";
 import { getProject } from "@/lib/queries/getProject";
 import * as Sentry from "@sentry/nextjs"
-import ProjectForm from "@/app/(rs)/projects/form/ProjectForm";
+import ProjectForm from "@/app/backoffice/projects/form/ProjectForm2";
 
 export async function generateMetadata({
     searchParams,

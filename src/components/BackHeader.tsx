@@ -4,8 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MailButton } from './MailButton';
 import { useState } from 'react';
+import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs'
+import { Button } from '@/components/ui/button'
+import { LogOut } from 'lucide-react';
 
-export function ClientHeader() {
+export function BackHeader() {
     const [isHovered, setIsHovered] = useState(false);
     
     return (
@@ -29,19 +32,16 @@ export function ClientHeader() {
                 </div>
 
                 <div className='flex items-center gap-10'>
+                    <Button variant="ghost" size="icon" aria-label='logout' title='Logout' className='rounded-full' asChild>
+                        <LogoutLink>
+                            <LogOut />
+                        </LogoutLink>
+                        </Button>
                 <Link href="/about" className="flex justify-center items-center gap-2 ml-0" title="home">
                     <h6 className="hidden sm:block text-base m-0 mt-1">
                         A propos
                     </h6>
                 </Link>
-
-                <MailButton
-                    href="/" 
-                    label="eugenierobin.ui@gmail.com"
-                    isHovered={isHovered}
-                    setIsHovered={setIsHovered}
-                    mailto="mailto:eugenierobin.ui@gmail.com"
-                />
                 </div>
             </div>
         </header>

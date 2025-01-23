@@ -9,13 +9,15 @@ type Props = {
     href?: string,
     isHovered: boolean;
     setIsHovered: (hover: boolean) => void,
+    mailto: string
 }
 
 export function MailButton({
     label,
     href,
     isHovered,
-    setIsHovered
+    setIsHovered,
+    mailto
 }: Props) {
 
     const handleMouseEnter = () => {
@@ -24,6 +26,13 @@ export function MailButton({
     
       const handleMouseLeave = () => {
         setIsHovered(false);
+      };
+
+      const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (mailto) {
+          e.preventDefault(); // Prevent default behavior
+          window.location.href = mailto; // Open email client
+        }
       };
 
     return (
@@ -36,9 +45,10 @@ export function MailButton({
         asChild
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
         >
             {href ? (  
-            <Link href={href} className="flex  justify-center items-center" title="home">
+            <Link href={mailto} className="flex  justify-center items-center" title="home">
             <h6 className={`hidden text-base sm:block m-0 ${isHovered ? 'transition ease-in-out delay-150 -translate-x-5 duration-300' : 'transition ease-in-out delay-150 duration-300'}`}>
                 {label}
             </h6>
