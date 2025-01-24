@@ -7,6 +7,7 @@ import { ProjectsList } from "./projects/ProjectsList";
 import { Button } from "@/components/ui/button";
 import { CirclePlus } from "lucide-react";
 import Link from "next/link";
+import { CreateProjectDialog } from "./projects/CreateProjectDialog";
 
 export default async function Backoffice() {
     const {isAuthenticated} = getKindeServerSession();
@@ -14,14 +15,9 @@ export default async function Backoffice() {
     console.log('isUserAuthenticated', isUserAuthenticated)
     if (!isUserAuthenticated) { redirect("/login") }
     else { return (
-        <div className='p-10 flex flex-col justify-between gap-4'>
-            <div className='m-auto w-1/4'>
-                <Button variant="secondary" size="icon" aria-label='logout' title='Logout' className='rounded-full w-full text-white px-5' asChild>
-                    <Link href='/create'>
-                        <CirclePlus />
-                        Créer un nouveau projet
-                    </Link>
-                </Button>
+        <div className='p-10 flex flex-col justify-between items-center gap-4'>
+            <div className="h-10 w-1/4">
+                <CreateProjectDialog />
             </div>
             <ProjectsList />
       </div>) }
