@@ -37,7 +37,7 @@ export function BackHeader() {
                             <LogOut />
                             Se déconnecter
                         </LogoutLink>
-                        </Button>
+                    </Button>
                 </div>
             </div>
         </header>

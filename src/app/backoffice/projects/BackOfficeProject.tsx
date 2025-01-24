@@ -11,7 +11,7 @@ export default function Project({ project }: Props) {
     if (!project) return null; // In case project data is missing
 
     return (
-        <div className="relative text-white rounded-2xl cursor-pointer mt-10">
+        <div className="m-10 relative text-white rounded-2xl cursor-pointer mt-10">
             <img src={project.imageUrl} alt={project.title} className="object-cover rounded-xl w-full h-full relative" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent rounded-xl "></div>
             
