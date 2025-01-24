@@ -15,19 +15,14 @@ export function CreateProjectDialog({ project }: Props) {
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="secondary" size="icon" title='Create' className='rounded-full w-full text-white px-5'>
-                {projectId ? "modifier projet" : "Créer un nouveau projet"} 
+                {projectId ? "Editer le projet" : "Créer un nouveau projet"} 
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent className="sm:max-w-[800px] h-[600px]">
             <DialogHeader>
-              <DialogTitle>{projectId ? "modifier projet" : "Créer un nouveau projet"} </DialogTitle>
+              <DialogTitle>{project?.id ? `Editer le projet : ${project.clientName}` : "Créer un nouveau projet"}</DialogTitle>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <ProjectForm project={project} />
-            </div>
-            <DialogFooter>
-              <Button type="submit">Save changes</Button>
-            </DialogFooter>
+            <ProjectForm project={project} />
           </DialogContent>
         </Dialog>
       )
