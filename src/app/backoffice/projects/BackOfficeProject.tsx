@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { selectProjectSchemaType } from "@/zod-schemas/project";
 import Link from "next/link";
+import { CreateProjectDialog } from "./form/CreateProjectDialog";
 
 type Props = {
     project?: selectProjectSchemaType,
@@ -28,9 +29,9 @@ export default function Project({ project }: Props) {
                     </div>
                 </div>
                 <div className='flex gap-5'>
-                    <Button variant="secondary" className="text-white rounded-full">
-                        <Link href={`/project/${project.id}`}>Modifier Projet</Link>
-                    </Button>
+                    <div>
+                        <CreateProjectDialog project={project} />
+                    </div>
                     <Button variant="destructive" className="text-white rounded-full">
                         <Link href={`/project/${project.id}`}>Supprimer Projet</Link>
                     </Button>
