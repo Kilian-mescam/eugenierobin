@@ -32,16 +32,12 @@ export function BackHeader() {
                 </div>
 
                 <div className='flex items-center gap-10'>
-                    <Button variant="ghost" size="icon" aria-label='logout' title='Logout' className='rounded-full' asChild>
+                    <Button variant="secondary" size="icon" aria-label='logout' title='Logout' className='rounded-full w-full text-white px-5' asChild>
                         <LogoutLink>
                             <LogOut />
+                            Se déconnecter
                         </LogoutLink>
                         </Button>
-                <Link href="/about" className="flex justify-center items-center gap-2 ml-0" title="home">
-                    <h6 className="hidden sm:block text-base m-0 mt-1">
-                        A propos
-                    </h6>
-                </Link>
                 </div>
             </div>
         </header>

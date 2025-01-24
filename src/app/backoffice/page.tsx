@@ -2,13 +2,19 @@ export const metadata = {
     title: "Projects Search",
 }
 import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
-import ProjectForm from "./projects/form/ProjectForm2";
 import { redirect } from "next/navigation";
+import { ProjectsList } from "./projects/ProjectsList";
 
 export default async function Backoffice() {
     const {isAuthenticated} = getKindeServerSession();
     const isUserAuthenticated = await isAuthenticated();
     console.log('isUserAuthenticated', isUserAuthenticated)
     if (!isUserAuthenticated) { redirect("/login") }
-    else { return <ProjectForm /> }
+    else { return (
+        <div className='p-5 flex justify-between gap-4'>
+        <div className='w-full '>
+            <ProjectsList />
+        </div>
+        <div className='bg-green-500 w-full'>Form</div>
+      </div>) }
 }
