@@ -43,7 +43,7 @@ export function MultipleCheckboxWithLabel<S>({
                         {items.map((item) => (
                             <FormItem
                                 key={item.id || item.label} // Ensure a unique key for each checkbox
-                                className="flex flex-row items-center space-x-3 space-y-0"
+                                className="flex flex-row items-center space-x-3 space-y-0 hover:opacity-100 "
                             >
                                 <FormControl>
                                     <Checkbox
@@ -60,7 +60,7 @@ export function MultipleCheckboxWithLabel<S>({
                                         disabled={disabled} // Optionally disable checkbox
                                     />
                                 </FormControl>
-                                <FormLabel className="text-lg font-normal">
+                                <FormLabel className="text-lg font-normal opacity-70 hover:opacity-100">
                                     {item.label}
                                 </FormLabel>
                             </FormItem>
