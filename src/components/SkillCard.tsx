@@ -4,37 +4,38 @@ import Image from 'next/image'
 
 type Props = {
     image: string,
+    imageBackground: string
     imageModified?: string
-    label: string,
     content: string,
     className?: string
+    alt: string
+    object: string
 }
 
 export function SkillCard({
     image,
     imageModified,
-    label,
+    imageBackground,
     content,
-    className
+    className,
+    alt,
+    object
 }: Props) {
     return (
-        <Card className="max-w-72">
-            <div className="flex flex-col items-center">
+        <Card className="relative rounded-3xl h-[544px] w-full flex flex-col items-center justify-center">
+            <img src={imageBackground} alt={alt} className={` h-full w-full rounded-2xl ${object}`} />
+            <div className="absolute flex flex-col items-start mx-14 gap-6">
                 <Image 
                     className={className}
                     src={image}
-                    width={250}
-                    height={250}
-                    sizes="300px"
-                    alt={label}
+                    width={200}
+                    height={200}
+                    sizes="200px"
+                    alt={alt}
                     priority={true}
-                    title={label}
                 />
+                <div className='text-white text-lg'>{content}</div>
             </div>
-            <CardHeader>
-                <CardTitle>{label}</CardTitle>
-                <CardDescription>{content}</CardDescription>
-            </CardHeader>
         </Card>
     )
 }

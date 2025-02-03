@@ -11,6 +11,18 @@ src: "./fonts/NeulisAlt-Regular.woff",
   weight: "100 900",
 });
 
+const neulisItalic = localFont({
+  src: "./fonts/NeulisAlt-Italic.woff",
+    variable: "--font-neulisAlt-Italic",
+    weight: "100 900",
+  });
+
+  const neulisAltSemiBoldItalic = localFont({
+    src: "./fonts/NeulisAlt-SemiBoldItalic.woff",
+      variable: "--font-neulisAlt-semiBold-italic",
+      weight: "100 900",
+    });
+
 const neulisAltSemiBold = localFont({
   src: "./fonts/NeulisAlt-SemiBold.woff",
     variable: "--font-neulisAlt-semiBold",
@@ -53,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${archivo.variable} ${neulisAlt.variable} ${neulisAltSemiBold.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
+        className={`${archivo.variable} ${neulisItalic.variable} ${neulisAltSemiBoldItalic.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
         <div className="mx-auto width-full">
             {children}

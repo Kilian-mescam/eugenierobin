@@ -31,7 +31,7 @@ export function CustomInputWithLabel<S>({
                     <FormControl>
                         <Input
                             id={nameInSchema}
-                            className={`w-full disabled:text-blue-500 dark:disabled:text-green-500 focus-visible:outline-none placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring disabled:cursor-not-allowed text-primary disabled:opacity-75 rounded-none border-b border-primary ${className}`}
+                            className={`w-full pl-0 opacity-70 disabled:text-blue-500 dark:disabled:text-green-500 focus-visible:outline-none placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring disabled:cursor-not-allowed text-primary disabled:opacity-75 rounded-none border-b border-primary ${className}`}
                             placeholder={fieldTitle}
                             {...props}
                             {...field}

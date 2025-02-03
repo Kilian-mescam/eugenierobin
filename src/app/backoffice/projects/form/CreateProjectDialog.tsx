@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ProjectForm from "./ProjectForm";
 import { selectProjectSchemaType } from "@/zod-schemas/project";
 
@@ -18,7 +16,7 @@ export function CreateProjectDialog({ project }: Props) {
                 {projectId ? "Editer le projet" : "Créer un nouveau projet"} 
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[800px] h-[600px]">
+          <DialogContent className="sm:max-w-[1000px] h-[700px]">
             <DialogHeader>
               <DialogTitle>{project?.id ? `Editer le projet : ${project.clientName}` : "Créer un nouveau projet"}</DialogTitle>
             </DialogHeader>

@@ -7,7 +7,11 @@ body {
 }
 
 h1 {
-  font-family: var(--font-neulisAlt-semiBold)
+  font-family: var(--font-neulisAlt-semiBold-italic)
+}
+
+h6 {
+  font-family: var(--font-neulisAlt-Italic)
 }
 
 h4 {

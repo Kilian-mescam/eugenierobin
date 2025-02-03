@@ -50,7 +50,6 @@ export default function ProjectForm({ project }: Props) {
         execute: executeSave,
         result: saveResult,
         isPending: isSaving,
-        reset: resetSaveAction
     } = useAction(saveProjectAction, {
         onSuccess({ data }) {
             if (data?.message) {
@@ -71,7 +70,6 @@ export default function ProjectForm({ project }: Props) {
     })
 
     async function submitForm(data: insertProjectSchemaType) {
-        console.log('data', data)
         executeSave(data)
     }
 
@@ -84,35 +82,39 @@ export default function ProjectForm({ project }: Props) {
                     className="flex flex-col gap-4 md:gap-8"
                 >
                     <div className="flex flex-col gap-8">
-                        <div className="flex">
-                            <div className="flex flex-col gap-4 w-1/2">
-                                <InputWithLabel<insertProjectSchemaType>
-                                    fieldTitle="Titre"
-                                    nameInSchema="title"
-                                />
-                                <InputWithLabel<insertProjectSchemaType>
-                                    fieldTitle="Nom du client"
-                                    nameInSchema="clientName"
-                                />
+                        <div className='flex flex-col'>
+                            <div className="flex">
+                                <div className="flex flex-col gap-4 w-1/2">
+                                    <InputWithLabel<insertProjectSchemaType>
+                                        fieldTitle="Titre"
+                                        nameInSchema="title"
+                                        className="w-full"
+                                    />
+                                    <InputWithLabel<insertProjectSchemaType>
+                                        fieldTitle="Nom du client"
+                                        nameInSchema="clientName"
+                                    />
+                                </div>
+
+                                <div className='w-1/2 px-5'>
+                                    <ImageUploaderWithLabel<insertProjectSchemaType>
+                                        fieldTitle="Image du client"
+                                        nameInSchema="imageUrl"
+                                        image={project?.imageUrl}
+                                    /> 
+                                </div>
+
+                                   
                             </div>
-                            <ImageUploaderWithLabel<insertProjectSchemaType>
-                                fieldTitle="Image du client"
-                                nameInSchema="imageUrl"
-                                image={project?.imageUrl}
-                            />                          
+                            <TextAreaWithLabel<insertProjectSchemaType>
+                                        fieldTitle="Description"
+                                        nameInSchema="description"
+                                        className='h-full'
+                                    />     
                         </div>
-                       
-                        <TextAreaWithLabel<insertProjectSchemaType>
-                            fieldTitle="Description"
-                            nameInSchema="description"
-                            className='h-full'
-                        />
                         
                     </div>
-
                     <div className="flex flex-col gap-4 w-full max-w-xs">
-                        
-
                         <div className="flex gap-2 mt-10">
                             <Button
                                 type="submit"

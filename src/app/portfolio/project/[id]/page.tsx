@@ -14,7 +14,8 @@ export default async function Page({
 
   return (
         <div className="relative mt-3 text-white ">
-            <img src={project?.imageUrl} alt={project.title} className="object-cover h-screen w-full relative" />
+          {project?.image && <img src={project?.image} alt={project.title} className="object-cover h-screen w-full relative" /> }
+            
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent "></div>
             
             <div className="absolute top-1/4 ml-40 flex flex-col gap-10 w-1/3 ">

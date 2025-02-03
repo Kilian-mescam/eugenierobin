@@ -8,6 +8,9 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { InputHTMLAttributes, useState } from "react"
+import { ImagePlus } from "lucide-react";
+import { useDropzone } from "react-dropzone";
+import React from "react";
 
 type Props<S> = {
     fieldTitle: string,
@@ -23,61 +26,80 @@ export function ImageUploaderWithLabel<S>({
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     const [preview, setPreview] = useState<string | null>(image ?? null);
 
-    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-          setSelectedImage(file);
-          setPreview(URL.createObjectURL(file)); // Image preview
-        }
-      };
+    const onDrop = React.useCallback(
+        (acceptedFiles: File[]) => {
+          const reader = new FileReader();
+          try {
+            reader.onload = () => setPreview(reader.result as string);
+            reader.readAsDataURL(acceptedFiles[0]);
+            form.setValue("image", acceptedFiles[0]);
+            form.clearErrors("image");
+          } catch (error) {
+            setPreview(null);
+            form.resetField("image");
+          }
+        },
+        [form],
+      );
 
-      const handleUpload = async () => {
-        if (!selectedImage) return;
-    
-        const formData = new FormData();
-        formData.append('image', selectedImage);
-    
-        try {
-          const res = await fetch('/api/upload', {
-            method: 'POST',
-            body: formData,
-          });
-          if (!res.ok) throw new Error('Upload failed');
-          const data = await res.json();
-          console.log('Uploaded successfully:', data);
-        } catch (error) {
-          console.error('Error uploading:', error);
-        }
-      };
+      const { getRootProps, getInputProps, isDragActive, fileRejections } =
+      useDropzone({
+        onDrop,
+        maxFiles: 1,
+        maxSize: 1000000000,
+        accept: { "image/png": [], "image/jpg": [], "image/jpeg": [] },
+      });
   
     return (
         <FormField
             control={form.control}
             name={nameInSchema}
-            render={({ field }) => (
-                <FormItem>
+            render={() => (
+                <FormItem className="mx-auto">
+                  <FormLabel
+                    className={`${
+                      fileRejections.length !== 0 && "text-destructive"
+                    }`}
+                  >
                     <FormLabel
                         className="text-base"
                         htmlFor={nameInSchema}
                     >
                         {fieldTitle}
                     </FormLabel>
-
-                    <FormControl>
-                        <div className='flex flex-col gap-4'>
-                            <Input
-                                id={nameInSchema}
-                                className={`w-full max-w-xs cursor-pointer border border-input disabled:text-blue-500 dark:disabled:text-green-500 disabled:opacity-75 ${className}`}
-                                type="file" 
-                                onChange={handleImageChange} 
-                            />
-                            {preview && <img src={preview} alt="Image preview" style={{ maxWidth: '300px' }} />}
-                        </div>
-                    </FormControl>
-
-                    <FormMessage />
+                  </FormLabel>
+                  <FormControl>
+                    <div
+                      {...getRootProps()}
+                      className="mx-auto  flex cursor-pointer flex-col items-center justify-center gap-y-2 rounded-lg border border-foreground p-8 shadow-sm shadow-foreground"
+                    >
+                      {preview && (
+                        <img
+                          src={preview as string}
+                          alt="Uploaded image"
+                          className="max-h-[200px] rounded-lg"
+                        />
+                      )}
+                      <ImagePlus
+                        className={`size-20 ${preview ? "hidden" : "block"}`}
+                      />
+                      <Input {...getInputProps()} type="file" />
+                      {isDragActive ? (
+                        <p>Drop the image!</p>
+                      ) : (
+                        <p>Click here or drag an image to upload it</p>
+                      )}
+                    </div>
+                  </FormControl>
+                  <FormMessage>
+                    {fileRejections.length !== 0 && (
+                      <p>
+                        Image must be less than 1MB and of type png, jpg, or jpeg
+                      </p>
+                    )}
+                  </FormMessage>
                 </FormItem>
-            )}
+              )}
         />
     )
 }

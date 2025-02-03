@@ -43,59 +43,9 @@ export function ClientFooter() {
                         />
                     </div>
                 </div>
-                <div className='w-1/2'>
+                <div className='w-1/2' id='form'>
                     <RequestForm />
                 </div>
-           </div>
-           <div className='border-t botder-b border py-7 flex flex-row items-center justify-around text-white'>
-                <Image 
-                    src='/images/Prairy.svg'
-                    width={100}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Beaba.svg'
-                    width={80}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/APRR.svg'
-                    width={80}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Aida.svg'
-                    width={60}
-                    height={50}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/ecole-des-loisirs.svg'
-                    width={150}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Cyril.svg'
-                    width={170}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
            </div>
            <div className='flex justify-between text-white px-32 py-20'>
                 <div>
