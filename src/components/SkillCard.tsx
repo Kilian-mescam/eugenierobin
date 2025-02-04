@@ -9,7 +9,6 @@ type Props = {
     content: string,
     className?: string
     alt: string
-    object: string
 }
 
 export function SkillCard({
@@ -18,15 +17,12 @@ export function SkillCard({
     imageBackground,
     content,
     className,
-    alt,
-    object
+    alt
 }: Props) {
     return (
-        <Card className="relative rounded-3xl h-[544px] w-full flex flex-col items-center justify-center">
-            <img src={imageBackground} alt={alt} className={` h-full w-full rounded-2xl ${object}`} />
-            <div className="absolute flex flex-col items-start mx-14 gap-6">
+        <Card className={cn("rounded-3xl h-[544px] w-full flex flex-col items-center justify-center", className)}>
+            <div className=" flex flex-col items-start mx-14 gap-6">
                 <Image 
-                    className={className}
                     src={image}
                     width={200}
                     height={200}

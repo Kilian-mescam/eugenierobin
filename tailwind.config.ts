@@ -11,6 +11,9 @@ export default {
   	extend: {
 		backgroundImage: {
 			'cover-aida': "url('/images/coverAida.png')",
+			'skillcard-branding-img': "url('/images/bloc-branding.jpg')",
+			'skillcard-ui-img': "url('/images/bloc-ui.jpg')",
+			'skillcard-ux-img': "url('/images/bloc-ux.jpg')"
 		},
   		colors: {
   			background: 'hsl(var(--background))',

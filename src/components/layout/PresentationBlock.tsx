@@ -60,9 +60,9 @@ export function PresentationBlock() {
                 </div>
             </div>
             <div className="flex gap-5">
-                <SkillCard object='size-32  object-left-top' imageBackground={"/images/skillcard-background.png"} alt="ux" image="/images/sun.svg" content="J’audite et conçois des interfaces pour simplifier la vie des utilisateurs et répondre efficacement à leurs besoins"></SkillCard>
-                <SkillCard object='size-40  object-left-bottom' imageBackground={"/images/skillcard-background.png"} alt="ui" image="/images/trefle.svg" content="J’harmonise les designs en respectant votre charte graphique, les spécificités de votre plateforme"></SkillCard>
-                <SkillCard object='size-72  object-right-bottom' imageBackground={"/images/skillcard-background.png"} alt="branding" image="/images/blob.svg" content="Je crée des logos et des identités visuelles qui reflètent votre univers et plaisent à votre audience"></SkillCard>
+                <SkillCard className='bg-skillcard-ux-img bg-cover' imageBackground={"/images/skillcard-background.png"} alt="ux" image="/images/sun.svg" content="J’audite et conçois des interfaces pour simplifier la vie des utilisateurs et répondre efficacement à leurs besoins"></SkillCard>
+                <SkillCard className='bg-skillcard-ui-img bg-cover' imageBackground={"/images/skillcard-background.png"} alt="ui" image="/images/trefle.svg" content="J’harmonise les designs en respectant votre charte graphique, les spécificités de votre plateforme"></SkillCard>
+                <SkillCard className='bg-skillcard-branding-img  bg-cover' imageBackground={"/images/skillcard-background.png"} alt="branding" image="/images/blob.svg" content="Je crée des logos et des identités visuelles qui reflètent votre univers et plaisent à votre audience"></SkillCard>
             </div>
             <div className='py-7 bg-secondary flex flex-row h-40 items-center justify-around text-white w-full rounded-xl'>
                 <Image 
