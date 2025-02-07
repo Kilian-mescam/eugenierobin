@@ -7,11 +7,19 @@ body {
 }
 
 h1 {
-  font-family: var(--font-neulisAlt-semiBold-italic)
+  font-family: var(--font-neulis-alt);
+  font-style: 'italic'
 }
 
 h6 {
-  font-family: var(--font-neulisAlt-Italic)
+  font-family: var(--font-neulis-alt);
+  font-style: 'italic'
+}
+
+h3 {
+  font-family: var(--font-neulis-alt);
+  font-style: 'italic';
+  font-weight: 300;
 }
 
 h4 {

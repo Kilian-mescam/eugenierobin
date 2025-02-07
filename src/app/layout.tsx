@@ -2,32 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
-import { ClientFooter } from "@/components/ClientFooter";
-import { ClientHeader } from "@/components/ClientHeader";
-
-const neulisAlt = localFont({
-src: "./fonts/NeulisAlt-Regular.woff",
-  variable: "--font-neulisAlt",
-  weight: "100 900",
-});
-
-const neulisItalic = localFont({
-  src: "./fonts/NeulisAlt-Italic.woff",
-    variable: "--font-neulisAlt-Italic",
-    weight: "100 900",
-  });
-
-  const neulisAltSemiBoldItalic = localFont({
-    src: "./fonts/NeulisAlt-SemiBoldItalic.woff",
-      variable: "--font-neulisAlt-semiBold-italic",
-      weight: "100 900",
-    });
-
-const neulisAltSemiBold = localFont({
-  src: "./fonts/NeulisAlt-SemiBold.woff",
-    variable: "--font-neulisAlt-semiBold",
-    weight: "100 900",
-  });
+import { neulisAlt } from "./neulisAltFont";
 
 const archivo = localFont({
   src: "./fonts/Archivo-Regular.ttf",
@@ -65,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${archivo.variable} ${neulisItalic.variable} ${neulisAltSemiBoldItalic.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
+        className={`${archivo.variable} ${neulisAlt.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
         <div className="mx-auto width-full">
             {children}

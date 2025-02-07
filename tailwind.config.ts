@@ -15,6 +15,12 @@ export default {
 			'skillcard-ui-img': "url('/images/bloc-ui.jpg')",
 			'skillcard-ux-img': "url('/images/bloc-ux.jpg')"
 		},
+		spacing: {
+			'42': '10.5rem', // Add custom spacing for top-42 (42 * 0.25rem = 10.5rem)
+			'38': '9.5rem',
+			'22': '5.5rem',
+			'18':'4.5rem'
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
