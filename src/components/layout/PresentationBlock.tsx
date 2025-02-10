@@ -5,8 +5,8 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from 'next/image'
-import { ArrowUpRight } from "lucide-react";
 import { SkillCards } from "../SkillCards";
+import { BrandsPanel } from "./BrandPanel";
 
 export function PresentationBlock() {
 
@@ -65,61 +65,28 @@ export function PresentationBlock() {
                     <h3 className='text-2xl text-secondary'>Mettez <span className='font-bold'>l’utilisateur au cœur</span> de vos projets</h3>
                     <span className="text-xl">Je conçois des interfaces claires et intuitives pour faciliter le quotidien, résoudre des problèmes et créer des expériences engageantes.</span>
                     <div>
-                        <Button onClick={handleScroll} variant="secondary" className="text-white rounded-full">Parlez-moi de votre projet</Button>
+                        <Button onClick={handleScroll} variant="secondary" className="text-white rounded-full h-12">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clipPath="url(#clip0_1673_3476)">
+                                <path d="M5.26672 11.3936L1.82359 10.1249C1.72865 10.0898 1.64673 10.0265 1.58888 9.94349C1.53102 9.86046 1.5 9.76169 1.5 9.66049C1.5 9.55929 1.53102 9.46052 1.58888 9.37749C1.64673 9.29446 1.72865 9.23116 1.82359 9.19611L5.26672 7.92736L6.53547 4.48424C6.57051 4.3893 6.63381 4.30738 6.71684 4.24952C6.79987 4.19166 6.89864 4.16064 6.99984 4.16064C7.10104 4.16064 7.19981 4.19166 7.28284 4.24952C7.36587 4.30738 7.42917 4.3893 7.46422 4.48424L8.73297 7.92736L12.1761 9.19611C12.271 9.23116 12.3529 9.29446 12.4108 9.37749C12.4687 9.46052 12.4997 9.55929 12.4997 9.66049C12.4997 9.76169 12.4687 9.86046 12.4108 9.94349C12.3529 10.0265 12.271 10.0898 12.1761 10.1249L8.73297 11.3936L7.46422 14.8367C7.42917 14.9317 7.36587 15.0136 7.28284 15.0715C7.19981 15.1293 7.10104 15.1603 6.99984 15.1603C6.89864 15.1603 6.79987 15.1293 6.71684 15.0715C6.63381 15.0136 6.57051 14.9317 6.53547 14.8367L5.26672 11.3936Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M11 1.66064V4.66064" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M14 5.16064V7.16064" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M9.5 3.16064H12.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M13 6.16064H15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1673_3476">
+                                <rect width="16" height="16" fill="white" transform="translate(0 0.660645)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            Parlez-moi de votre projet
+                        </Button>
                     </div>
                 </div>
             </div>
             <SkillCards />
-            <div className='py-7 bg-secondary flex flex-row h-40 items-center justify-around text-white w-full rounded-xl'>
-                <Image 
-                    src='/images/Prairy.svg'
-                    width={100}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Beaba.svg'
-                    width={80}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/APRR.svg'
-                    width={80}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Aida.svg'
-                    width={60}
-                    height={50}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/ecole-des-loisirs.svg'
-                    width={150}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-                <Image 
-                    src='/images/Cyril.svg'
-                    width={170}
-                    height={70}
-                    alt="Page not found"
-                    priority={true}
-                    title="Page Not Found"
-                />
-           </div>
+            <BrandsPanel />
         </div>
     ) 
 }
