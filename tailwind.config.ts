@@ -21,6 +21,17 @@ export default {
 			'22': '5.5rem',
 			'18':'4.5rem'
 		  },
+		fontFamily:{
+			'clash-display': ['var(--font-clash-display)']
+		},
+		rotate: {
+			'4': '4deg',
+			'5': '5deg',
+			'6': '6deg',
+			'7': '7deg',
+			'8': '8deg',
+			'9': '9deg',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -45,6 +56,15 @@ export default {
   			},
 			violet: {
 				DEFAULT: '#B36CF2'
+			},
+			violetBeta: {
+				DEFAULT: '#9747FF'
+			},
+			orange: {
+				DEFAULT: '#FF4800'
+			},
+			rose: {
+				DEFAULT: '#FE7AA8'
 			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',

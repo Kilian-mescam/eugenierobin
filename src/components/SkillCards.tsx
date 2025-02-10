@@ -42,7 +42,7 @@ export function SkillCards() {
                         alt="ux"
                         priority={true}
                     />
-                    <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-22 left-16 transition-all duration-700 ease-in-out transform", hoveredCard['1'] ? "-translate-y-16" : "")}>UX</h1>
+                    <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-16 transition-all duration-700 ease-in-out transform", hoveredCard['1'] ? "-translate-y-16" : "")}>UX</h1>
                 </div>
                 <h3
                     className={cn(

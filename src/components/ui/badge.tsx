@@ -11,7 +11,13 @@ const badgeVariants = cva(
         default:
           "border border border-black bg-transparent text-secondary rounded-full font-gotham",
         secondary:
-          "border border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "font---font-clash-display border border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        violetBeta:
+          "font-clash-display text-lg font-medium border-transparent rounded-3xl text-lg bg-violetBeta text-white hover:bg-violetBeta/80",
+        orange:
+        "font-clash-display text-lg font-medium border-transparent rounded-3xl text-lg bg-orange text-white hover:bg-orange/80",
+        rose:
+        "font-clash-display text-lg font-medium border-transparent rounded-3xl text-lg bg-rose text-white hover:bg-rose/80",
         transparent:
             "bg-badge bg-opacity-20 text-white rounded-full font-gotham",
         destructive:

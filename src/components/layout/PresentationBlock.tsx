@@ -42,20 +42,30 @@ export function PresentationBlock() {
                         />
                     </Link>
                     <div className="text-2xl rotate-[-0.2rad] mb-10">
-                        <h6 className="italic">Je suis</h6>
-                        <h1 className='text-6xl font-black text-secondary italic'>
+                        <h6 className="italic ">Je suis</h6>
+                        <h1 className='text-6xl font-semibold font-black text-secondary italic'>
                             Designer d'interface
                         </h1>
                     </div>
                 </div>
                 <div className='w-1/2 flex flex-col gap-5 m-10 justify-center'>
                     <div className="flex gap-3 text-sm">
-                        <Badge><span>Instagram</span><span><ArrowUpRight size={14} strokeWidth={3}/></span></Badge>
-                        <Badge><span>Linkedin</span><span><ArrowUpRight size={14} strokeWidth={3}/></span></Badge>
+                        <Badge className="-rotate-5" variant='violetBeta'>App mobile</Badge>
+                        <Badge className="rotate-5" variant='orange'>Site web</Badge>
+                        <Badge className="-rotate-5" variant='rose'>Logiciel embarqué</Badge>
+                        <Image 
+                            src='/images/heart-svg.svg'
+                            width={50}
+                            height={70}
+                            alt="Page not found"
+                            priority={true}
+                            title="Page Not Found"
+                        />
                     </div>
+                    <h3 className='text-2xl text-secondary'>Mettez <span className='font-bold'>l’utilisateur au cœur</span> de vos projets</h3>
                     <span className="text-xl">Je conçois des interfaces claires et intuitives pour faciliter le quotidien, résoudre des problèmes et créer des expériences engageantes.</span>
                     <div>
-                        <Button onClick={handleScroll} variant="violet" className="text-white rounded-full">Parlez-moi de votre projet</Button>
+                        <Button onClick={handleScroll} variant="secondary" className="text-white rounded-full">Parlez-moi de votre projet</Button>
                     </div>
                 </div>
             </div>

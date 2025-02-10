@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 import { neulisAlt } from "./neulisAltFont";
+import { clashDisplay } from "./clashDisplayFont";
 
 const archivo = localFont({
   src: "./fonts/Archivo-Regular.ttf",
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${archivo.variable} ${neulisAlt.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
+        className={`${archivo.variable} ${neulisAlt.variable} ${clashDisplay.variable} ${archivoMedium.variable} ${gotham.variable} antialiased bg-primary`}
       >
         <div className="mx-auto width-full">
             {children}
