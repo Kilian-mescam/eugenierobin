@@ -14,7 +14,7 @@ export function ClientHeader() {
                     <Link href="/"title="home">
                         <Image 
                             className="rounded-xl"
-                            src="/images/logo-small.png"
+                            src="/images/logo-eugenie-robin.svg"
                             width={100}
                             height={100}
                             sizes="500px"
@@ -37,7 +37,7 @@ export function ClientHeader() {
 
                     <MailButton
                         href="/" 
-                        label="eugenierobin.ui@gmail.com"
+                        label="Contact"
                         isHovered={isHovered}
                         setIsHovered={setIsHovered}
                         mailto="mailto:eugenierobin.ui@gmail.com"
