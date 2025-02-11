@@ -45,7 +45,7 @@ export function SkillCards() {
                         />
                         <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-16 transition-all duration-700 ease-in-out transform", hoveredCard['1'] ? "-translate-y-16" : "")}>UX</h1>
                     </div>
-                    <div className="">
+                    <div>
                         <Image 
                             className={cn("transition-all duration-700 ease-in-out transform" , hoveredCard['1'] ? "-translate-y-16 -rotate-45 opacity-10O" : "opacity-0")}
                             src="/images/star6-modified.svg"
@@ -80,17 +80,31 @@ export function SkillCards() {
             onMouseLeave={() => handleMouseLeave('2')}>
             <div className=" flex flex-col items-start mx-14 gap-6 relative">
                 <div className="relative">
-                    <Image 
-                        className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['2'] ? "-translate-y-16 rotate-90" : "")}
-                        src={hoveredCard['2'] ? "/images/star4-modified.svg" : "/images/star4.svg"}
-                        width={180}
-                        height={180}
-                        sizes="200px"
-                        alt='ui'
-                        priority={true}
-                    />
-                    <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-18 transition-all duration-700 ease-in-out transform", hoveredCard['2'] ? "-translate-y-16" : "")}>UI</h1>
-                </div>
+                    <div className='absolute'>
+                        <Image 
+                            className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['2'] ? "-translate-y-16 rotate-90 opacity-0" : "opacity-100")}
+                            src="/images/star4.svg"
+                            width={180}
+                            height={180}
+                            sizes="200px"
+                            alt='ui'
+                            priority={true}
+                        />
+                        <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-18 transition-all duration-700 ease-in-out transform", hoveredCard['2'] ? "-translate-y-16" : "")}>UI</h1>
+                    </div>
+                    <div>
+                        <Image 
+                            className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['2'] ? "-translate-y-16 rotate-90 opacity-100" : "opacity-0")}
+                            src="/images/star4-modified.svg"
+                            width={180}
+                            height={180}
+                            sizes="200px"
+                            alt='ui'
+                            priority={true}
+                        />
+                        <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-18 transition-all duration-700 ease-in-out transform", hoveredCard['2'] ? "-translate-y-16" : "")}>UI</h1>
+                    </div>
+                    </div>
                 <h3
                     className={cn(
                         "w-1/2 absolute top-38 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
@@ -109,10 +123,11 @@ export function SkillCards() {
             onMouseEnter={() => handleMouseEnter('3')}
             onMouseLeave={() => handleMouseLeave('3')}>
             <div className=" flex flex-col items-start mx-14 gap-6 relative">
-                <div className="relative">
+            <div className="relative">
+                <div className='absolute'>
                     <Image 
-                        className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['3'] ? "-translate-y-10 rotate-90" : "")}
-                        src={hoveredCard['3'] ? "/images/star3-modified.svg" : "/images/star3.svg"}
+                        className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['3'] ? "-translate-y-10 rotate-90 opacity-0" : "opacity-100")}
+                        src="/images/star3.svg"
                         width={180}
                         height={180}
                         sizes="200px"
@@ -120,6 +135,19 @@ export function SkillCards() {
                         priority={true}
                     />
                     <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-7 transition-all duration-700 ease-in-out transform", hoveredCard['3'] ? "-translate-y-14" : "")}>Branding</h1>
+                </div>
+                <div>
+                    <Image 
+                        className={cn("transition-all duration-700 ease-in-out transform translate-y-2" , hoveredCard['3'] ? "-translate-y-10 rotate-90 opacity-100" : "opacity-0")}
+                        src="/images/star3-modified.svg"
+                        width={180}
+                        height={180}
+                        sizes="200px"
+                        alt="branding"
+                        priority={true}
+                    />
+                    <h1 className={cn("italic text-white text-center text-3xl font-bold absolute top-20 left-7 transition-all duration-700 ease-in-out transform", hoveredCard['3'] ? "-translate-y-14" : "")}>Branding</h1>
+                </div>
                 </div>
                 <h3
                     className={cn(
