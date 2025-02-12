@@ -22,7 +22,9 @@ export default {
 			'18':'4.5rem'
 		  },
 		fontFamily:{
-			'clash-display': ['var(--font-clash-display)']
+			'clash-display': ['var(--font-clash-display)'],
+			'archivo': ['var(--font-archivo)'],
+			'neulis': ['var(--font-neulis)']
 		},
 		rotate: {
 			'4': '4deg',

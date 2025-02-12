@@ -19,7 +19,7 @@ const badgeVariants = cva(
         rose:
         "font-clash-display text-lg font-medium border-transparent rounded-3xl text-lg bg-rose text-white hover:bg-rose/80",
         transparent:
-            "bg-badge bg-opacity-20 text-white rounded-full font-gotham",
+            "font-archivo text-sm font-medium bg-badge bg-opacity-20 text-white rounded-full font-semibold",
         destructive:
           "border border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
         outline: "text-foreground",

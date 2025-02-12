@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-archivoMedium);
+  font-family: var(--font-archivo);
 }
 
 h1 {
@@ -23,7 +23,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--font-archivoMedium)
+  font-family: var(--font-archivo)
 }
 
 /* Add your custom font face here */

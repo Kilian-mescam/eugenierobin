@@ -151,7 +151,7 @@ export function SkillCards() {
                 </div>
                 <h3
                     className={cn(
-                        "absolute top-40 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
+                        "w-1/2 absolute top-40 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
                         hoveredCard['3'] ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-0" // Opacity and translation on hover
                     )}
                 >
