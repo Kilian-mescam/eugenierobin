@@ -13,7 +13,7 @@ export default {
 			'cover-aida': "url('/images/coverAida.png')",
 			'skillcard-branding-img': "url('/images/bloc-branding.jpg')",
 			'skillcard-ui-img': "url('/images/bloc-ui.jpg')",
-			'skillcard-ux-img': "url('/images/bloc-ux.jpg')"
+			'skillcard-ux-img': "url('/images/bloc-ux.jpg')",
 		},
 		spacing: {
 			'42': '10.5rem', // Add custom spacing for top-42 (42 * 0.25rem = 10.5rem)
@@ -62,6 +62,9 @@ export default {
 			violetBeta: {
 				DEFAULT: '#9747FF'
 			},
+			gradientLeft: '#A26AFB',
+			gradientCenter: '#FF4800',
+			gradientRight: '#FE90F4',
 			orange: {
 				DEFAULT: '#FF4800'
 			},

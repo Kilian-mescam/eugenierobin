@@ -3,8 +3,13 @@ import { commentsData } from "./commentData";
 
 export function CommentBlock() {
     return (
-        <div className='flex gap-3 h-full bg-yellow-400'>
-            <div className='w-1/3 justify-center items-center h-full bg-red-500'>LE DESIGN C'EST TOUJOURS MIEUX À</div>
+        <div className='flex items-center gap-3 h-full bg-gradient-to-r from-gradientLeft from-10% via-gradientCenter via-50% to-gradientRight to-140%'>
+            <div className='w-1/3 flex flex-col gap-3 h-full text-4xl text-white pl-10'>
+                <span className='font-neulis text-5xl italic font-light'>Le design</span>
+                <span className='font-neulis text-5xl italic font-light'>c'est toujours</span>
+                <span className='font-neulis text-5xl italic font-light'>mieux à plusieurs</span>
+                <span className='font-archivo text-base font-normal'>clients et collaborateurs</span>
+            </div>
             <div className='w-2/3 flex flex-col gap-6'>
                <div className='flex gap-6'>
                     <div className='w-[350px] h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
