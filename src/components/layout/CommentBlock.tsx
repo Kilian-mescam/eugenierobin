@@ -25,11 +25,11 @@ export function CommentBlock() {
                             job='Co-fondateur de Appsolute'
                             name='Jean Castets'
                         />
-                        {/* <CommentCard 
+                        <CommentCard 
                             content='Vraiment ma meuf elle est trop belle'
                             job='front dev' 
                             name='Kilian Mescam'
-                        /> */}
+                        />
                     </div>
                     <div className='flex w-full flex-col gap-6'>
                     <CommentCard

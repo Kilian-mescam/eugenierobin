@@ -27,7 +27,7 @@ export function PresentationBlock() {
 
     return (
         <div className="flex flex-col gap-5 items-center justify-center mt-20">
-            <div className='flex'>
+            <div className='flex flex-col md:flex-row items-center'>
                 <div className='w-1/2 h-72 px-10 flex items-center justify-center'>
                     <Link href="/"title="home">
                         <Image 

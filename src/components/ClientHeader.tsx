@@ -10,7 +10,8 @@ export function ClientHeader() {
     
     return (
         <header className='h-14 p-6 top-0 z-20'>
-            <div className="flex h-8 items-center justify-between w-full">
+            <div className="flex h-8 items-center justify-center sm:justify-between w-full bg-red-300">
+                <div className='bg-blue-400 hidden sm:block'>
                     <Link href="/"title="home">
                         <Image 
                             className="rounded-xl"
@@ -23,25 +24,28 @@ export function ClientHeader() {
                             title="Page Not Found"
                         />
                     </Link>
-                <div className='flex items-center gap-10'>
+                </div>
+                   
+                <div className='flex items-center gap-10 bg-green-400'>
                     <Link href="/about" className="flex justify-center items-center gap-2 ml-0" title="home">
-                        <h6 className="hidden sm:block text-base m-0 mt-1">
+                        <h6 className="text-base m-0 mt-1">
                             Portfolio
                         </h6>
                     </Link>
                     <Link href="/about" className="flex justify-center items-center gap-2 ml-0" title="home">
-                        <h6 className="hidden sm:block text-base m-0 mt-1">
+                        <h6 className="text-base m-0 mt-1">
                             A propos
                         </h6>
                     </Link>
-
-                    <MailButton
-                        href="/" 
-                        label="Contact"
-                        isHovered={isHovered}
-                        setIsHovered={setIsHovered}
-                        mailto="mailto:eugenierobin.ui@gmail.com"
-                    />
+                    <div className='hidden sm:block'>
+                        <MailButton
+                            href="/" 
+                            label="Contact"
+                            isHovered={isHovered}
+                            setIsHovered={setIsHovered}
+                            mailto="mailto:eugenierobin.ui@gmail.com"
+                        />
+                    </div>
                 </div>
             </div>
         </header>
