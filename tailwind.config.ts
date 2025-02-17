@@ -24,7 +24,8 @@ export default {
 		fontFamily:{
 			'clash-display': ['var(--font-clash-display)'],
 			'archivo': ['var(--font-archivo)'],
-			'neulis': ['var(--font-neulis)']
+			'neulisBold': ['var(--font-neulis-bold)'],
+			'neulisLight': ['var(--font-neulis-light)']
 		},
 		rotate: {
 			'4': '4deg',
@@ -58,6 +59,9 @@ export default {
   			},
 			violet: {
 				DEFAULT: '#B36CF2'
+			},
+			dark: {
+				DEFAULT: '#402047'
 			},
 			violetBeta: {
 				DEFAULT: '#9747FF'

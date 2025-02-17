@@ -13,8 +13,8 @@ export function CommentCard ({
     job
 }: Props) {
     return (
-        <Card className="w-[350px] h-full p-6">
-            <CardContent className="font-archivo text-sm">
+        <Card className="w-full h-full py-6">
+            <CardContent className="font-archivo text-sm text-dark">
                     {content}
             </CardContent>
             <CardFooter className="flex justify-between">

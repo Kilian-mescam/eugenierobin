@@ -3,20 +3,18 @@ import { commentsData } from "./commentData";
 
 export function CommentBlock() {
     return (
-        <div className='flex items-center gap-3 h-full bg-gradient-to-r from-gradientLeft from-10% via-gradientCenter via-50% to-gradientRight to-140%'>
-            <div className='w-1/3 flex flex-col gap-3 h-full text-4xl text-white pl-10'>
-                <span className='font-neulis text-5xl italic font-light'>Le design</span>
-                <span className='font-neulis text-5xl italic font-light'>c'est toujours</span>
-                <span className='font-neulis text-5xl italic font-light'>mieux à plusieurs</span>
-                <span className='font-archivo text-base font-normal'>clients et collaborateurs</span>
+        <div className='flex px-10 items-center gap-3 h-full bg-gradient-to-r from-gradientLeft from-10% via-gradientCenter via-50% to-gradientRight to-140%'>
+            <div className='w-1/3 flex flex-col gap-3 h-full text-4xl text-white font-neulisLight'>
+                <h1 className='font-neulisLight text-4xl italic font-light'>Le <b className="font-neulisBold font-semibold">design</b><br /> c'est toujours <br />mieux à <b className="font-semibold font-neulisBold">plusieurs</b></h1>
+                <span className='font-archivo text-lg font-light'>clients et collaborateurs</span>
             </div>
-            <div className='w-2/3 flex flex-col gap-6'>
+            <div className='w-2/3 flex flex-col justify-center gap-6'>
                <div className='flex gap-6'>
-                    <div className='w-[350px] h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
-                    <div className='w-[350px] h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
+                    <div className='w-full h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
+                    <div className='w-full h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
                </div>
-               <div className='flex gap-6'>
-                    <div className='flex flex-col gap-6'>
+               <div className='flex gap-6 '>
+                    <div className='flex w-full flex-col gap-6'>
                         <CommentCard 
                             content="Nous avons eu l'occasion de collaborer avec Eugénie sur l'interface de notre application mobile. Nous avons toujours été satisfaits de ses propositions et de son travail !"
                             job='Co-fondateur de Prairy'
@@ -27,13 +25,13 @@ export function CommentBlock() {
                             job='Co-fondateur de Appsolute'
                             name='Jean Castets'
                         />
-                        <CommentCard 
+                        {/* <CommentCard 
                             content='Vraiment ma meuf elle est trop belle'
                             job='front dev' 
                             name='Kilian Mescam'
-                        />
+                        /> */}
                     </div>
-                    <div className='flex flex-col gap-6'>
+                    <div className='flex w-full flex-col gap-6'>
                     <CommentCard
                             content="Eugénie a une grande capacité d'écoute et de compréhension du besoin client. Elle sait mettre en œuvre sa créativité et son expérience pour y répondre. Elle est également force de proposition, avec des idées très pertinentes pour améliorer le parcours et l'expérience utilisateur.Pour Béaba, elle a créé un univers intégré et sans couture entre l'IHM du Babycook Smart et l'application smartphone. Je recommande fortement les services d'Eugénie." 
                             job='Project owner chez Béaba'
@@ -48,8 +46,8 @@ export function CommentBlock() {
                     </div>
                </div>
                <div className='flex gap-6'>
-                    <div className='w-[350px] h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
-                    <div className='w-[350px] h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
+                    <div className='w-full h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
+                    <div className='w-full h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
                </div>
             </div>
         </div>

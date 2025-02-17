@@ -50,7 +50,7 @@ export function SkillCards() {
                 </div>
                 <h3
                     className={cn(
-                        "absolute w-1/2 top-36 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
+                        "absolute w-1/2 top-36 leading-8 font-neulisLight font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
                         hoveredCard['1'] ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-0" // Opacity and translation on hover
                     )}
                 >
@@ -97,7 +97,7 @@ export function SkillCards() {
                     </div>
                 <h3
                     className={cn(
-                        "w-1/2 absolute top-38 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
+                        "w-1/2 absolute top-38 leading-8 font-neulisLight font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
                         hoveredCard['2'] ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-0" // Opacity and translation on hover
                     )}
                 >
@@ -141,7 +141,7 @@ export function SkillCards() {
                 </div>
                 <h3
                     className={cn(
-                        "w-1/2 absolute top-40 leading-8 font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
+                        " absolute top-40 leading-8 font-neulisLight font-light italic text-3xl text-white transition-all duration-700 ease-in-out transform", // Animation classes
                         hoveredCard['3'] ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-0" // Opacity and translation on hover
                     )}
                 >

@@ -11,9 +11,15 @@ const gotham = localFont({
   weight: "500 900",
 });
 
-const neulis = localFont({
-  src: "./fonts/neulisAlt/NeulisAlt-SemiBolditalic.ttf",
-  variable: "--font-neulis",
+const neulisBold = localFont({
+  src: "./fonts/neulisAlt/NeulisAlt-SemiBoldItalic.ttf",
+  variable: "--font-neulis-bold",
+  weight: "400 900",
+});
+
+const neulisLight = localFont({
+  src: "./fonts/neulisAlt/NeulisAlt-LightItalic.ttf",
+  variable: "--font-neulis-light",
   weight: "400 900",
 });
 
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}
-        className={`${neulis.variable} ${clashDisplay.variable} ${archivo.variable} ${gotham.variable} antialiased bg-primary`}
+        className={`${neulisBold.variable} ${neulisLight.variable} ${clashDisplay.variable} ${archivo.variable} ${gotham.variable} antialiased bg-primary`}
       >
         <div className="mx-auto width-full">
             {children}
