@@ -49,9 +49,9 @@ export function MailButton({
         >
             {href ? (  
             <Link href={mailto} className="flex  justify-center items-center" title="home">
-            <h6 className={`hidden text-base sm:block m-0 ${isHovered ? 'transition ease-in-out delay-150 -translate-x-5 duration-300' : 'transition ease-in-out delay-150 duration-300'}`}>
+            <span className={`hidden text-base sm:block m-0 ${isHovered ? 'transition ease-in-out delay-150 -translate-x-5 duration-300' : 'transition ease-in-out delay-150 duration-300'}`}>
                 {label}
-            </h6>
+            </span>
             <FaArrowRight className={`absolute right-0 stroke-2 opacity-0 ${isHovered ? 'opacity-100 transition ease-in-out delay-150 -translate-x-5 duration-300' : 'transition opacity-0 ease-in-out delay-50 -translate-x-5 duration-200'}`} />
             <FaArrowRight className={`hidden opacity-0 ${isHovered ? 'transition ease-in-out delay-150 w-80 duration-300' : ''} `} />
 

@@ -26,7 +26,7 @@ export function BrandsPanel() {
 
 
     return (
-        <div className="py-7 bg-secondary flex flex-row h-40 items-center justify-center gap-10 text-white w-full rounded-xl">
+        <div className="py-7 bg-secondary flex flex-row h-40 items-center justify-center gap-10 text-white w-full rounded-xl overflow-x-auto">
 
         <div
           className='transition-all duration-500'

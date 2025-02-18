@@ -26,7 +26,7 @@ export function PresentationBlock() {
       };
 
     return (
-        <div className="flex flex-col gap-5 items-center justify-center mt-20">
+        <div className="flex flex-col sm:gap-5 items-center justify-center sm:mt-20">
             <div className='flex flex-col md:flex-row items-center'>
                 <div className='w-1/2 h-72 px-10 flex items-center justify-center'>
                     <Link href="/"title="home">
@@ -48,23 +48,27 @@ export function PresentationBlock() {
                         </h1>
                     </div>
                 </div>
-                <div className='w-1/2 flex flex-col gap-5 m-10 justify-center'>
-                    <div className="flex gap-3 text-sm">
-                        <Badge className="-rotate-5" variant='violetBeta'>App mobile</Badge>
-                        <Badge className="rotate-5" variant='orange'>Site web</Badge>
-                        <Badge className="-rotate-5" variant='rose'>Logiciel embarqué</Badge>
-                        <Image 
-                            src='/images/heart-svg.svg'
-                            width={50}
-                            height={70}
-                            alt="Page not found"
-                            priority={true}
-                            title="Page Not Found"
-                        />
+                <div className='px-10 flex flex-col gap-5 sm:m-10 justify-center'>
+                    <div className="flex flex-col sm:flex-row gap-3 text-sm mx-8">
+                        <div className="flex gap-3 w-full justify-between">
+                            <Badge className="-rotate-5 min-w-32" variant='violetBeta'>App mobile</Badge>
+                            <Badge className="rotate-5 min-w-24" variant='orange'>Site web</Badge>
+                        </div>
+                        <div className="flex gap-3 justify-between w-full">
+                            <Badge className="-rotate-5 min-w-48" variant='rose'>Logiciel embarqué</Badge>
+                            <Image 
+                                src='/images/heart-svg.svg'
+                                width={50}
+                                height={70}
+                                alt="Page not found"
+                                priority={true}
+                                title="Page Not Found"
+                            />
+                        </div>
                     </div>
                     <h3 className='text-2xl text-secondary'>Mettez <span className='font-bold'>l’utilisateur au cœur</span> de vos projets</h3>
                     <span className="text-xl">Je conçois des interfaces claires et intuitives pour faciliter le quotidien, résoudre des problèmes et créer des expériences engageantes.</span>
-                    <div>
+                    <div className="flex sm:justify-start justify-center">
                         <Button onClick={handleScroll} variant="secondary" className="text-white rounded-full h-12">
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_1673_3476)">

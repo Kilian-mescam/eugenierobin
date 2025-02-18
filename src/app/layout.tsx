@@ -43,7 +43,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}
         className={`${neulisBold.variable} ${neulisLight.variable} ${clashDisplay.variable} ${archivo.variable} ${gotham.variable} antialiased bg-primary`}
       >
-        <div className="mx-auto width-full">
+        <div>
             {children}
           <Toaster />
         </div>

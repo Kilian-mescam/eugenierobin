@@ -61,14 +61,14 @@ export default function RequestForm() {
     }
 
     return (
-        <div className="flex flex-col sm:px-8">
+        <div className="flex flex-col sm:px-8 ">
             <DisplayServerActionResponse result={saveResult} />
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(submitForm)}
-                    className="flex flex-col md:flex-row gap-4 md:gap-8 px-10"
+                    className="flex flex-col md:flex-row gap-4 md:gap-8 sm:px-10 "
                 >
-                    <div className="flex flex-col gap-10 w-full">
+                    <div className="flex flex-col gap-10 w-full ">
                     
 
                         <MultipleCheckboxWithLabel<EmailRequestSchemaType>

@@ -14,7 +14,7 @@ export function SkillCards() {
         setHoveredCard((prevState) => ({ ...prevState, [id]: false }));
     };
     return (
-        <div className="flex gap-5">
+        <div className="flex flex-col sm:flex-row gap-5">
         <Card 
             id='1'
             className={cn(
@@ -56,7 +56,7 @@ export function SkillCards() {
                 >
                     Design d'expérience utilisateur
                 </h3>
-                <div className={cn('text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['1'] ? "translate-y-14" : "")}>
+                <div className={cn('hidden sm:block text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['1'] ? "translate-y-14" : "")}>
                     J’audite et conçois des interfaces pour simplifier la vie des utilisateurs et répondre efficacement à leurs besoins
                 </div>
             </div>
@@ -103,7 +103,7 @@ export function SkillCards() {
                 >
                     Design d'interface utilisateur
                 </h3>
-                <div className={cn('text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['2'] ? "translate-y-16" : "")}>J’harmonise les designs en respectant votre charte graphique, les spécificités de votre plateforme</div>
+                <div className={cn('hidden sm:block  text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['2'] ? "translate-y-16" : "")}>J’harmonise les designs en respectant votre charte graphique, les spécificités de votre plateforme</div>
             </div>
         </Card>
         <Card 
@@ -147,7 +147,7 @@ export function SkillCards() {
                 >
                     Image de marque
                 </h3>
-                <div className={cn('text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['3'] ? "translate-y-8" : "")}>Je crée des logos et des identités visuelles qui reflètent votre univers et plaisent à votre audience</div>
+                <div className={cn('hidden sm:block  text-white text-lg transition-all duration-700 ease-in-out transform ', hoveredCard['3'] ? "translate-y-8" : "")}>Je crée des logos et des identités visuelles qui reflètent votre univers et plaisent à votre audience</div>
             </div>
         </Card>
         </div>

@@ -3,17 +3,17 @@ import { commentsData } from "./commentData";
 
 export function CommentBlock() {
     return (
-        <div className='flex px-10 items-center gap-3 h-full bg-gradient-to-r from-gradientLeft from-10% via-gradientCenter via-50% to-gradientRight to-140%'>
+        <div className='flex flex-col sm:flex-row px-10 items-center gap-3 h-full bg-gradient-to-r from-gradientLeft from-10% via-gradientCenter via-50% to-gradientRight to-140%'>
             <div className='w-1/3 flex flex-col gap-3 h-full text-4xl text-white font-neulisLight'>
                 <h1 className='font-neulisLight text-4xl italic font-light'>Le <b className="font-neulisBold font-semibold">design</b><br /> c'est toujours <br />mieux à <b className="font-semibold font-neulisBold">plusieurs</b></h1>
                 <span className='font-archivo text-lg font-light'>clients et collaborateurs</span>
             </div>
             <div className='w-2/3 flex flex-col justify-center gap-6'>
-               <div className='flex gap-6'>
+               <div className='hidden sm:block flex gap-6'>
                     <div className='w-full h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
                     <div className='w-full h-10 top-0 rounded-b-2xl bg-white opacity-80'></div>
                </div>
-               <div className='flex gap-6 '>
+               <div className='flex flex-col sm:flex-row gap-6 '>
                     <div className='flex w-full flex-col gap-6'>
                         <CommentCard 
                             content="Nous avons eu l'occasion de collaborer avec Eugénie sur l'interface de notre application mobile. Nous avons toujours été satisfaits de ses propositions et de son travail !"
@@ -45,7 +45,7 @@ export function CommentBlock() {
                         /> 
                     </div>
                </div>
-               <div className='flex gap-6'>
+               <div className='hidden sm:block flex gap-6'>
                     <div className='w-full h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
                     <div className='w-full h-10 bottom-0 rounded-t-2xl bg-white opacity-80'></div>
                </div>

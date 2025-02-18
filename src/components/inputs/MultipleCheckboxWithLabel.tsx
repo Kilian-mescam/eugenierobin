@@ -39,7 +39,7 @@ export function MultipleCheckboxWithLabel<S>({
                         {fieldTitle}
                     </FormLabel>
 
-                    <div className="grid grid-cols-2 gap-2 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
                         {items.map((item) => (
                             <FormItem
                                 key={item.id || item.label} // Ensure a unique key for each checkbox
